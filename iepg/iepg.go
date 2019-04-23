@@ -14,19 +14,44 @@ import (
 	"strings"
 
 	"go-iepg/log"
+	p "go-iepg/param"
 	pl "go-iepg/search"
 )
 
-func PrintReserve(target string, ch string) {
-	doc := pl.Search(target, ch)
+type ReserveType int32
+
+const (
+	TIDIJI ReserveType = iota
+	CS
+)
+
+func getReadData(dp *p.DynamicParam) []*pl.ReadData {
+	ch := "0"
+	if dp.IsCs {
+		ch = "2"
+	}
+
+	doc := pl.Search(dp.Title, ch)
 	if doc == nil {
-		return
+		return nil
 	}
 	r := pl.ParseSection(doc)
+	return r
+}
+
+func PrintReserve(dp *p.DynamicParam) {
+	r := getReadData(dp)
 	for _, v := range r {
-		src := strings.ToLower(v.Title)
-		dst := strings.ToLower(target)
-		if strings.Contains(src, dst) {
+		if !confirmTitle(v.Title, dp.Title) {
+			log.L.Error("failed to reserve [ " + v.Title + "]")
+			log.L.Error("title unmatch src[" + v.Title + "]  [" + dp.Title + "]")
+		} else if !confirmStartTime(v.Start_h, v.Start_m, dp.Start_time) {
+			log.L.Error("failed to reserve [ " + v.Title + "]")
+			log.L.Error("start time unmatch src[" + fmt.Sprintf("%02d:%02d", v.Start_h, v.Start_m) + "]  [" + dp.Start_time + "]")
+		} else if !confirmWeekDay(v.WeekDay, dp.WeekDay) {
+			log.L.Error("failed to reserve [ " + v.Title + "]")
+			log.L.Error("weekday unmatch src[" + v.WeekDay + "]  [" + dp.WeekDay + "]")
+		} else {
 			fmt.Println("Content-type: application/x-tv-program-info; charset=shift_jis")
 			fmt.Println("version: 1")
 			fmt.Println("station: " + convertStation(v.Station))
@@ -35,36 +60,65 @@ func PrintReserve(target string, ch string) {
 			fmt.Println("date: " + fmt.Sprintf("%02d", v.Date))
 			fmt.Println("start: " + fmt.Sprintf("%02d:%02d", v.Start_h, v.Start_m))
 			fmt.Println("end: " + fmt.Sprintf("%02d:%02d", v.End_h, v.End_m))
-			fmt.Println("program-title: " + v.Title)
+			fmt.Println("program-title: " + v.Title + fmt.Sprintf(" %d月%d日", v.Month, v.Date))
 		}
 	}
 }
 
-func reserveCommon(target, ch string) {
-	doc := pl.Search(target, ch)
-	if doc == nil {
-		return
+func confirmTitle(src, dst string) bool {
+	s := strings.ReplaceAll(strings.ToLower(src), "　", " ")
+	d := strings.ReplaceAll(strings.ToLower(dst), "　", " ")
+	md := strings.Split(d, " ")
+	for _, v := range md {
+		if strings.Contains(s, v) {
+			return true
+		}
 	}
-	r := pl.ParseSection(doc)
+	return false
+}
+
+func confirmStartTime(h int, m int, dst string) bool {
+	if dst == "" {
+		return true
+	}
+	src_st := fmt.Sprintf("%02d:%02d", h, m)
+	if strings.Contains(src_st, dst) {
+		return true
+	}
+	return false
+}
+
+func confirmWeekDay(src, dst string) bool {
+	if dst == "" {
+		return true
+	}
+	if strings.Contains(src, dst) {
+		return true
+	}
+	return false
+}
+
+func Reserve(dp *p.DynamicParam) {
+	s_conf := p.LoadStaticParam("config.json")
+	r := getReadData(dp)
 	for _, v := range r {
-		src := strings.ToLower(v.Title)
-		dst := strings.ToLower(target)
-		if strings.Contains(src, dst) {
+		if !confirmTitle(v.Title, dp.Title) {
+			log.L.Error("failed to reserve [ " + v.Title + "]")
+			log.L.Error("title unmatch src[" + v.Title + "]  [" + dp.Title + "]")
+		} else if !confirmStartTime(v.Start_h, v.Start_m, dp.Start_time) {
+			log.L.Error("failed to reserve [ " + v.Title + "]")
+			log.L.Error("start time unmatch src[" + fmt.Sprintf("%02d:%02d", v.Start_h, v.Start_m) + "]  [" + dp.Start_time + "]")
+		} else if !confirmWeekDay(v.WeekDay, dp.WeekDay) {
+			log.L.Error("failed to reserve [ " + v.Title + "]")
+			log.L.Error("weekday unmatch src[" + v.WeekDay + "]  [" + dp.WeekDay + "]")
+		} else {
 			OutputIepg(v)
 			exe, err := os.Executable()
-			err = exec.Command(".\\PLUMAGE\\x64\\PLUMAGE.exe", filepath.Dir(exe)+"\\test.tvpi").Run()
+			err = exec.Command(s_conf.PlumagePath, filepath.Dir(exe)+"\\"+s_conf.TempFileName).Run()
 			log.L.Debug(err)
 			break
 		}
 	}
-}
-
-func ReserveTidigi(target string) {
-	reserveCommon(target, "0")
-}
-
-func ReserveCs(target string) {
-	reserveCommon(target, "2")
 }
 
 func OutputIepg(in *pl.ReadData) {
@@ -83,7 +137,7 @@ func OutputIepg(in *pl.ReadData) {
 	_, err = sjisWriter.WriteString("date: " + fmt.Sprintf("%02d", in.Date) + "\n")
 	_, err = sjisWriter.WriteString("start: " + fmt.Sprintf("%02d:%02d", in.Start_h, in.Start_m) + "\n")
 	_, err = sjisWriter.WriteString("end: " + fmt.Sprintf("%02d:%02d", in.End_h, in.End_m) + "\n")
-	_, err = sjisWriter.WriteString("program-title: " + in.Title + "\n")
+	_, err = sjisWriter.WriteString("program-title: " + in.Title + fmt.Sprintf(" %d月%d日", in.Month, in.Date) + "\n")
 	err = sjisWriter.Flush()
 }
 

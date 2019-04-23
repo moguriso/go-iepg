@@ -23,6 +23,7 @@ type ReadData struct {
 	End_h   int
 	End_m   int
 	Title   string
+	WeekDay string
 }
 
 func Search(target string, ch string) *goquery.Document {
@@ -64,6 +65,9 @@ func ParseSection(doc *goquery.Document) []*ReadData {
 			End_m:   0,
 			Title:   "",
 		}
+		wd := ParseWeekDay(s)
+		log.L.Error("weekday = " + wd)
+		res.WeekDay = wd
 		station := ParseStation(s)
 		res.Station = station
 		month, date, _ := ParseDate(s)
@@ -76,6 +80,8 @@ func ParseSection(doc *goquery.Document) []*ReadData {
 		res.End_m, _ = strconv.Atoi(end_time[3:])
 		title := ParseTitle(s)
 		res.Title = title
+		log.L.Debug("res = ")
+		log.L.Debug(res)
 		ret = append(ret, res)
 	})
 	return ret
@@ -103,6 +109,23 @@ func ParseDate(doc *goquery.Selection) (string, string, string) {
 		return "", "", ""
 	}
 	return month, date, sub_date
+}
+
+func ParseWeekDay(doc *goquery.Selection) string {
+	d := ""
+	//doc.Find("#main > div:nth-child(7) > ul > li:nth-child(1) > div.leftarea > p.yjMS").Each(func(_ int, s *goquery.Selection) {
+	doc.Find("#main > div > ul > li > div.leftarea > p.yjMS").Each(func(_ int, s *goquery.Selection) {
+		d = s.Text()
+	})
+	b := ""
+	//doc.Find("#main > div:nth-child(7) > ul > li > div.leftarea > p.yjMS > em").Each(func(_ int, s *goquery.Selection) {
+	doc.Find("#main > div > ul > li > div.leftarea > p.yjMS > em").Each(func(_ int, s *goquery.Selection) {
+		b = s.Text()
+	})
+	//d = d[strings.Index(d, "（")+1 : strings.Index(d, "）")]
+	d = strings.Trim(d, b)
+	//d = strings.TrimRight(d, "）")
+	return d
 }
 
 func getTime(in string) (string, string) {
@@ -144,6 +167,7 @@ func ParseTitle(doc *goquery.Selection) string {
 	doc.Find("#main > div:nth-child(7) > ul > li > div.rightarea > p.yjLS.pb5p > a").Each(func(_ int, s *goquery.Selection) {
 		title = s.Text()
 	})
+	title = strings.ReplaceAll(title, "　", " ")
 	log.L.Debug(title)
 	return title
 }

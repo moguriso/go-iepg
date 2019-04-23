@@ -2,11 +2,13 @@ package main
 
 import (
 	"go-iepg/iepg"
+	"go-iepg/param"
 )
 
 func main() {
-	//	iepg.ReserveTidigi()
-	//	iepg.ReserveCs()
-	//iepg.PrintReserve("相撲", "0")
-	iepg.PrintReserve("mix", "2")
+	d_conf := param.LoadDynamicParam("reserve.json")
+	for _, v := range d_conf {
+		//iepg.PrintReserve(v)
+		iepg.Reserve(v)
+	}
 }

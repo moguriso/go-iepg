@@ -1,0 +1,220 @@
+{
+	"reserve_info": {
+		"鬼滅の刃": {
+			"start_time": "23:30",
+			"weekday": "",
+			"station": "MX",
+			"is_cs": false
+		},
+		"Fairy gone": {
+			"start_time": "",
+			"weekday": "",
+			"station": "MX",
+			"is_cs": false
+		},
+		"mix": {
+			"start_time": "17:30",
+			"weekday": "",
+			"station": "日テレ",
+			"is_cs": false
+		},
+		"RobiHachi": {
+			"start_time": "",
+			"weekday": "",
+			"station": "MX",
+			"is_cs": false
+		},
+		"ガイアの夜明け": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"カンブリア宮殿": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"キャロル チューズデイ": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"ゲゲゲの鬼太郎": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"この音とまれ": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"この世の果てで恋を唄う少女YU-NO": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"ストライクウィッチーズ": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"ゾイドワイルド": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"どろろ": {
+			"start_time": "22:00",
+			"weekday": "月",
+			"station": "MX",
+			"is_cs": false
+		},
+		"なむあみだ仏っ": {
+			"start_time": "22:30",
+			"weekday": "月",
+			"station": "MX",
+			"is_cs": false
+		},
+		"なんでここに先生が": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"ノブナガ先生の幼な妻": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"ひとりぼっちの○○生": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"ブラッククローバー": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"ぼくたちは勉強ができない": {
+			"start_time": "24:30",
+			"weekday": "土",
+			"station": "MX",
+			"is_cs": false
+		},
+		"みだらな青ちゃんは勉強ができない": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"よしもと新喜劇": {
+			"start_time": "16:00",
+			"weekday": "月",
+			"station": "MX",
+			"is_cs": false
+		},
+		"ワンパンマン": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"異世界かるてっと": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"群青のマグメル": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"賢者の孫": {
+			"start_time": "23:30",
+			"weekday": "木",
+			"station": "MX",
+			"is_cs": false
+		},
+		"女子かう生": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"消滅都市": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"笑点": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"真夜中のオカルト公務員": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"世界一受けたい授業": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"世話やきキツネの仙狐さん": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"川柳少女": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"洗い屋さん": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"超可動ガールズ": {
+			"start_time": "24:00",
+			"weekday": "月",
+			"station": "MX",
+			"is_cs": false
+		},
+		"八月のシンデレラナイン": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"八十亀ちゃんかんさつにっき": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		}
+	}
+}																				   
