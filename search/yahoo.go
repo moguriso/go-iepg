@@ -1,0 +1,149 @@
+package search
+
+import (
+	"fmt"
+	"strconv"
+	"strings"
+
+	"github.com/PuerkitoBio/goquery"
+
+	"go-iepg/log"
+)
+
+const YAHOO_ENDPOINT = "https://tv.yahoo.co.jp/search/?q="
+const APPEND_QUERY = "&a=23&oa=1&t="
+
+type ReadData struct {
+	Station string
+	Year    int
+	Month   int
+	Date    int
+	Start_h int
+	Start_m int
+	End_h   int
+	End_m   int
+	Title   string
+}
+
+func Search(target string, ch string) *goquery.Document {
+	title := strings.ReplaceAll(target, "%20", " ")
+	title = strings.ReplaceAll(title, " ", "%20")
+	doc, err := goquery.NewDocument(YAHOO_ENDPOINT + title + APPEND_QUERY + ch) // 0=tidigi, 2=cs
+	if err != nil {
+		log.L.Error("document not found. ")
+		return nil
+	}
+	return doc
+}
+
+func ParseFindCount(doc *goquery.Document) int {
+	count := ""
+	doc.Find("#main > div.yjMS.search_number.mb10 > p.floatl > em:nth-child(1)").Each(func(_ int, s *goquery.Selection) {
+		count = s.Text()
+	})
+
+	c, _ := strconv.Atoi(count)
+
+	return c
+}
+
+func ParseSection(doc *goquery.Document) []*ReadData {
+	selection := doc.Find("#main > div:nth-child(7) > ul")
+	innserSelection := selection.Find("li")
+
+	var ret []*ReadData
+	innserSelection.Each(func(_ int, s *goquery.Selection) {
+		res := &ReadData{
+			Station: "",
+			Year:    0,
+			Month:   0,
+			Date:    0,
+			Start_h: 0,
+			Start_m: 0,
+			End_h:   0,
+			End_m:   0,
+			Title:   "",
+		}
+		station := ParseStation(s)
+		res.Station = station
+		month, date, _ := ParseDate(s)
+		res.Month, _ = strconv.Atoi(month)
+		res.Date, _ = strconv.Atoi(date)
+		start_time, end_time := ParseTime(s)
+		res.Start_h, _ = strconv.Atoi(start_time[:2])
+		res.Start_m, _ = strconv.Atoi(start_time[3:])
+		res.End_h, _ = strconv.Atoi(end_time[:2])
+		res.End_m, _ = strconv.Atoi(end_time[3:])
+		title := ParseTitle(s)
+		res.Title = title
+		ret = append(ret, res)
+	})
+	return ret
+}
+
+func getDate(in string) (string, string, string) {
+	tm := strings.ReplaceAll(in, " ", "")
+	md := strings.Split(tm, "/")
+	if (md[0] == "") || (md[1] == "") {
+		return "", "", ""
+	} else {
+		month, _ := strconv.Atoi(md[0])
+		date, _ := strconv.Atoi(md[1])
+		return fmt.Sprintf("%02d", month), fmt.Sprintf("%02d", date), fmt.Sprintf(" %d月%d日", month, date)
+	}
+}
+func ParseDate(doc *goquery.Selection) (string, string, string) {
+	d := ""
+	doc.Find("#main > div:nth-child(7) > ul > li > div.leftarea > p.yjMS > em").Each(func(_ int, s *goquery.Selection) {
+		d = s.Text()
+	})
+
+	month, date, sub_date := getDate(d)
+	if (month == "") || (date == "") {
+		return "", "", ""
+	}
+	return month, date, sub_date
+}
+
+func getTime(in string) (string, string) {
+	tm := strings.ReplaceAll(in, " ", "")
+	start_end := strings.Split(tm, "～")
+
+	start := strings.Split(start_end[0], ":")
+	end := strings.Split(start_end[1], ":")
+
+	start_h, _ := strconv.Atoi(start[0])
+	start_m, _ := strconv.Atoi(start[1])
+	end_h, _ := strconv.Atoi(end[0])
+	end_m, _ := strconv.Atoi(end[1])
+
+	return fmt.Sprintf("%02d:%02d", start_h, start_m),
+		fmt.Sprintf("%02d:%02d", end_h, end_m)
+}
+
+func ParseTime(doc *goquery.Selection) (string, string) {
+	tm_range := ""
+	doc.Find("#main > div:nth-child(7) > ul > li > div.leftarea > p:nth-child(2) > em").Each(func(_ int, s *goquery.Selection) {
+		tm_range = s.Text()
+	})
+	start_time, end_time := getTime(tm_range)
+	return start_time, end_time
+}
+
+func ParseStation(doc *goquery.Selection) string {
+	station := ""
+	doc.Find("#main > div:nth-child(7) > ul > li > div.rightarea > p:nth-child(2) > span.pr35").Each(func(_ int, s *goquery.Selection) {
+		station = s.Text()
+	})
+	log.L.Debug(station)
+	return station
+}
+
+func ParseTitle(doc *goquery.Selection) string {
+	title := ""
+	doc.Find("#main > div:nth-child(7) > ul > li > div.rightarea > p.yjLS.pb5p > a").Each(func(_ int, s *goquery.Selection) {
+		title = s.Text()
+	})
+	log.L.Debug(title)
+	return title
+}

@@ -5,6 +5,8 @@ import (
 )
 
 func main() {
-	iepg.ReserveTidigi()
-	iepg.ReserveCs()
+	//	iepg.ReserveTidigi()
+	//	iepg.ReserveCs()
+	//iepg.PrintReserve("相撲", "0")
+	iepg.PrintReserve("mix", "2")
 }
