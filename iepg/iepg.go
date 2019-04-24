@@ -112,7 +112,7 @@ func Reserve(dp *p.DynamicParam) {
 			log.L.Error("failed to reserve [ " + v.Title + "]")
 			log.L.Error("weekday unmatch src[" + v.WeekDay + "]  [" + dp.WeekDay + "]")
 		} else {
-			OutputIepg(v)
+			OutputIepg(s_conf.TempFileName, v)
 			exe, err := os.Executable()
 			err = exec.Command(s_conf.PlumagePath, filepath.Dir(exe)+"\\"+s_conf.TempFileName).Run()
 			log.L.Debug(err)
@@ -121,8 +121,8 @@ func Reserve(dp *p.DynamicParam) {
 	}
 }
 
-func OutputIepg(in *pl.ReadData) {
-	fp, err := os.OpenFile("tmp.tvpi", os.O_CREATE|os.O_WRONLY, 0644)
+func OutputIepg(fileName string, in *pl.ReadData) {
+	fp, err := os.OpenFile(fileName, os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		panic(err)
 	}
