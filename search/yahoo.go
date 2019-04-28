@@ -23,6 +23,7 @@ type ReadData struct {
 	End_h   int
 	End_m   int
 	Title   string
+	Re      bool
 	WeekDay string
 }
 
@@ -64,6 +65,7 @@ func ParseSection(doc *goquery.Document) []*ReadData {
 			End_h:   0,
 			End_m:   0,
 			Title:   "",
+			Re:      false,
 		}
 		wd := ParseWeekDay(s)
 		log.L.Error("weekday = " + wd)
@@ -80,6 +82,10 @@ func ParseSection(doc *goquery.Document) []*ReadData {
 		res.End_m, _ = strconv.Atoi(end_time[3:])
 		title := ParseTitle(s)
 		res.Title = title
+		re := ParseRe(s)
+		if strings.Contains(re, "再") {
+			res.Re = true
+		}
 		log.L.Debug("res = ")
 		log.L.Debug(res)
 		ret = append(ret, res)
@@ -146,7 +152,7 @@ func getTime(in string) (string, string) {
 
 func ParseTime(doc *goquery.Selection) (string, string) {
 	tm_range := ""
-	doc.Find("#main > div:nth-child(7) > ul > li > div.leftarea > p:nth-child(2) > em").Each(func(_ int, s *goquery.Selection) {
+	doc.Find("#main > div > ul > li > div.leftarea > p > em").Each(func(_ int, s *goquery.Selection) {
 		tm_range = s.Text()
 	})
 	start_time, end_time := getTime(tm_range)
@@ -155,7 +161,7 @@ func ParseTime(doc *goquery.Selection) (string, string) {
 
 func ParseStation(doc *goquery.Selection) string {
 	station := ""
-	doc.Find("#main > div:nth-child(7) > ul > li > div.rightarea > p:nth-child(2) > span.pr35").Each(func(_ int, s *goquery.Selection) {
+	doc.Find("#main > div > ul > li > div.rightarea > p:nth-child(2) > span.pr35").Each(func(_ int, s *goquery.Selection) {
 		station = s.Text()
 	})
 	log.L.Debug(station)
@@ -164,10 +170,20 @@ func ParseStation(doc *goquery.Selection) string {
 
 func ParseTitle(doc *goquery.Selection) string {
 	title := ""
-	doc.Find("#main > div:nth-child(7) > ul > li > div.rightarea > p.yjLS.pb5p > a").Each(func(_ int, s *goquery.Selection) {
+	doc.Find("#main > div > ul > li > div.rightarea > p.yjLS.pb5p > a").Each(func(_ int, s *goquery.Selection) {
 		title = s.Text()
 	})
 	title = strings.ReplaceAll(title, "　", " ")
-	log.L.Debug(title)
+	log.L.Error(title)
 	return title
+}
+
+func ParseRe(doc *goquery.Selection) string {
+	re := ""
+	doc.Find("#main > div > ul > li > div.rightarea > p.yjLS.pb5p > span").Each(func(_ int, s *goquery.Selection) {
+		re = s.Text()
+	})
+	re = strings.ReplaceAll(re, "　", " ")
+	log.L.Error(re)
+	return re
 }

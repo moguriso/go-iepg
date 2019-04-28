@@ -8,7 +8,6 @@ import (
 func main() {
 	d_conf := param.LoadDynamicParam("reserve.json")
 	for _, v := range d_conf {
-		//iepg.PrintReserve(v)
-		iepg.Reserve(v)
+		iepg.PrintReserve(v) /* Linux doesn't support PLUMAGE */
 	}
 }

@@ -51,6 +51,9 @@ func PrintReserve(dp *p.DynamicParam) {
 		} else if !confirmWeekDay(v.WeekDay, dp.WeekDay) {
 			log.L.Error("failed to reserve [ " + v.Title + "]")
 			log.L.Error("weekday unmatch src[" + v.WeekDay + "]  [" + dp.WeekDay + "]")
+		} else if v.Re {
+			log.L.Error("failed to reserve [ " + v.Title + "]")
+			log.L.Error("再放送番組は録画しません") /* TODO: if need reserve ... */
 		} else {
 			fmt.Println("Content-type: application/x-tv-program-info; charset=shift_jis")
 			fmt.Println("version: 1")
@@ -111,11 +114,15 @@ func Reserve(dp *p.DynamicParam) {
 		} else if !confirmWeekDay(v.WeekDay, dp.WeekDay) {
 			log.L.Error("failed to reserve [ " + v.Title + "]")
 			log.L.Error("weekday unmatch src[" + v.WeekDay + "]  [" + dp.WeekDay + "]")
+		} else if v.Re {
+			log.L.Error("failed to reserve [ " + v.Title + "]")
+			log.L.Error("再放送番組は録画しません") /* TODO: if need reserve ... */
 		} else {
 			OutputIepg(s_conf.TempFileName, v)
 			exe, err := os.Executable()
 			err = exec.Command(s_conf.PlumagePath, filepath.Dir(exe)+"\\"+s_conf.TempFileName).Run()
-			log.L.Debug(err)
+			log.L.Error(err)
+			log.L.Error(v.Title + "予約しました")
 			break
 		}
 	}
