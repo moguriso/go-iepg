@@ -28,7 +28,7 @@ const (
 func getReadData(dp *p.DynamicParam) []*pl.ReadData {
 	ch := "0"
 	if dp.IsCs {
-		ch = "2"
+		ch = "1&t=2"
 	}
 
 	doc := pl.Search(dp.Title, ch)

@@ -4,4 +4,5 @@ go-iepg
 go-iepg.exe
 go.sum
 test.tvpi
+config.json
 
