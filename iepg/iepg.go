@@ -92,10 +92,15 @@ func confirmStartTime(h int, m int, dst string) bool {
 }
 
 func confirmWeekDay(src, dst string) bool {
+	log.L.Println("src =", src)
+	log.L.Println("dst =", dst)
+	tmp := strings.ReplaceAll(src, "（", "")
+	tmp = strings.ReplaceAll(tmp, "）", "")
+	log.L.Println("tmp =", tmp)
 	if dst == "" {
 		return true
 	}
-	if strings.Contains(src, dst) {
+	if strings.Contains(dst, tmp) {
 		return true
 	}
 	return false
@@ -123,7 +128,7 @@ func Reserve(dp *p.DynamicParam) {
 			err = exec.Command(s_conf.PlumagePath, filepath.Dir(exe)+"\\"+s_conf.TempFileName).Run()
 			log.L.Error(err)
 			log.L.Error(v.Title + "予約しました")
-			break
+			//break
 		}
 	}
 }
