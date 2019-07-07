@@ -2,6 +2,7 @@ package search
 
 import (
 	"fmt"
+	"regexp"
 	"strconv"
 	"strings"
 
@@ -174,8 +175,42 @@ func ParseTitle(doc *goquery.Selection) string {
 		title = s.Text()
 	})
 	title = strings.ReplaceAll(title, "　", " ")
-	log.L.Error(title)
+	log.L.Info("before:", title)
+	if r := convertEpisodeNumber(title); r != "" {
+		title = r
+		log.L.Info("after:", title)
+	} else {
+		log.L.Error("title episode convert error")
+	}
 	return title
+}
+
+func convertEpisodeNumber(in string) string {
+	ret := ""
+	str := fmt.Sprintf("%s ", in)
+	rep := regexp.MustCompile(`#[0-9][^0-9]`)
+
+	n := rep.FindAllStringSubmatch(str, -1)
+	for _, rr := range n {
+		z := strings.Replace(rr[0], " ", "", -1)
+		z = strings.Replace(z, "#", "", -1)
+		p, _ := strconv.Atoi(z)
+		if p > 0 && p < 10 {
+			z = fmt.Sprintf("#%02d", p)
+			ret = rep.ReplaceAllString(str, z)
+		} else if p == 0 {
+			rep2 := regexp.MustCompile(`#[0-9]`)
+			n2 := rep2.FindAllStringSubmatch(str, -1)
+			for _, rr2 := range n2 {
+				z2 := strings.Replace(rr2[0], " ", "", -1)
+				z2 = strings.Replace(z2, "#", "", -1)
+				p2, _ := strconv.Atoi(z2)
+				z2 = fmt.Sprintf("#%02d", p2)
+				ret = rep2.ReplaceAllString(str, z2)
+			}
+		}
+	}
+	return ret
 }
 
 func ParseRe(doc *goquery.Selection) string {
