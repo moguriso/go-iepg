@@ -26,6 +26,7 @@ type ReadData struct {
 	Title   string
 	Re      bool
 	WeekDay string
+	IsCs    bool
 }
 
 func Search(target string, ch string) *goquery.Document {
@@ -50,7 +51,7 @@ func ParseFindCount(doc *goquery.Document) int {
 	return c
 }
 
-func ParseSection(doc *goquery.Document) []*ReadData {
+func ParseSection(doc *goquery.Document, isCs bool) []*ReadData {
 	selection := doc.Find("#main > div:nth-child(7) > ul")
 	innserSelection := selection.Find("li")
 
@@ -67,6 +68,7 @@ func ParseSection(doc *goquery.Document) []*ReadData {
 			End_m:   0,
 			Title:   "",
 			Re:      false,
+			IsCs:    false,
 		}
 		wd := ParseWeekDay(s)
 		log.L.Error("weekday = " + wd)
@@ -86,6 +88,9 @@ func ParseSection(doc *goquery.Document) []*ReadData {
 		re := ParseRe(s)
 		if strings.Contains(re, "再") {
 			res.Re = true
+		}
+		if isCs {
+			res.IsCs = true
 		}
 		log.L.Debug("res = ")
 		log.L.Debug(res)

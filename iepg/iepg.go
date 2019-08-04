@@ -35,7 +35,8 @@ func getReadData(dp *p.DynamicParam) []*pl.ReadData {
 	if doc == nil {
 		return nil
 	}
-	r := pl.ParseSection(doc)
+
+	r := pl.ParseSection(doc, dp.IsCs)
 	return r
 }
 
@@ -149,7 +150,12 @@ func OutputIepg(fileName string, in *pl.ReadData) {
 	_, err = sjisWriter.WriteString("date: " + fmt.Sprintf("%02d", in.Date) + "\n")
 	_, err = sjisWriter.WriteString("start: " + fmt.Sprintf("%02d:%02d", in.Start_h, in.Start_m) + "\n")
 	_, err = sjisWriter.WriteString("end: " + fmt.Sprintf("%02d:%02d", in.End_h, in.End_m) + "\n")
-	_, err = sjisWriter.WriteString("program-title: " + in.Title + fmt.Sprintf(" %d月%d日", in.Month, in.Date) + "\n")
+	tl := in.Title
+	if in.IsCs {
+		tl += "_cs"
+	}
+	tl += fmt.Sprintf(" %d月%d日", in.Month, in.Date) + "\n"
+	_, err = sjisWriter.WriteString("program-title: " + tl)
 	err = sjisWriter.Flush()
 }
 
