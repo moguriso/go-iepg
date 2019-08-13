@@ -185,7 +185,7 @@ func ParseTitle(doc *goquery.Selection) string {
 		title = r
 		log.L.Info("after:", title)
 	} else {
-		log.L.Error("title episode convert error")
+		log.L.Debug("title episode convert \"no need\" or \"error\"")
 	}
 	return title
 }
