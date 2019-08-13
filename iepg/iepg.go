@@ -92,6 +92,18 @@ func confirmStartTime(h int, m int, dst string) bool {
 	return false
 }
 
+func confirmStation(src, dst string) bool {
+	log.L.Println("src =", src)
+	log.L.Println("dst =", dst)
+	if dst == "" {
+		return true
+	}
+	if strings.Contains(src, dst) {
+		return true
+	}
+	return false
+}
+
 func confirmWeekDay(src, dst string) bool {
 	log.L.Println("src =", src)
 	log.L.Println("dst =", dst)
@@ -120,6 +132,9 @@ func Reserve(dp *p.DynamicParam) {
 		} else if !confirmWeekDay(v.WeekDay, dp.WeekDay) {
 			log.L.Error("failed to reserve [ " + v.Title + "]")
 			log.L.Error("weekday unmatch src[" + v.WeekDay + "]  [" + dp.WeekDay + "]")
+		} else if !confirmStation(v.Station, dp.Station) {
+			log.L.Error("failed to reserve [ " + v.Title + "]")
+			log.L.Error("Station unmatch src[" + v.Station + "]  [" + dp.Station + "]")
 		} else if v.Re {
 			log.L.Error("failed to reserve [ " + v.Title + "]")
 			log.L.Error("再放送番組は録画しません") /* TODO: if need reserve ... */
