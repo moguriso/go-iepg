@@ -1,2 +1,0 @@
-go-iepg.exe
-pause
