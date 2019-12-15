@@ -81,11 +81,28 @@ func confirmTitle(src, dst string) bool {
 	return false
 }
 
-func confirmStartTime(h int, m int, dst string) bool {
+func confirmAlreadyStart(m, d, h, mm int) bool {
+	t := time.Now()
+	tm := int(t.Month())
+	td := int(t.Day())
+	th := int(t.Hour())
+	tmm := int(t.Minute())
+	log.L.Println("src = ", tm, td, th, tmm)
+	log.L.Println("dst = ", m, d, h, mm)
+	if tm >= m && td >= d {
+		if (th > h) || (th == h && tmm > mm) {
+			log.L.Println("this is time over.")
+			return false
+		}
+	}
+	return true
+}
+
+func confirmStartTime(h, mm int, dst string) bool {
 	if dst == "" {
 		return true
 	}
-	src_st := fmt.Sprintf("%02d:%02d", h, m)
+	src_st := fmt.Sprintf("%02d:%02d", h, mm)
 	if strings.Contains(src_st, dst) {
 		return true
 	}
@@ -129,6 +146,9 @@ func Reserve(dp *p.DynamicParam) {
 		} else if !confirmStartTime(v.Start_h, v.Start_m, dp.Start_time) {
 			log.L.Error("failed to reserve [ " + v.Title + "]")
 			log.L.Error("start time unmatch src[" + fmt.Sprintf("%02d:%02d", v.Start_h, v.Start_m) + "]  [" + dp.Start_time + "]")
+		} else if !confirmAlreadyStart(v.Month, v.Date, v.Start_h, v.Start_m) {
+			log.L.Error("failed to reserve [ " + v.Title + "]")
+			log.L.Error("it may already started or done.")
 		} else if !confirmWeekDay(v.WeekDay, dp.WeekDay) {
 			log.L.Error("failed to reserve [ " + v.Title + "]")
 			log.L.Error("weekday unmatch src[" + v.WeekDay + "]  [" + dp.WeekDay + "]")
