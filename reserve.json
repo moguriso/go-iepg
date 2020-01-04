@@ -96,18 +96,6 @@
 			"station": "",
 			"is_cs": false
 		},
-		"プランダラ": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"ネコぱら": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
 		"Infinite Dendrogram インフィニット デンドログラム": {
 			"start_time": "",
 			"weekday": "",
@@ -115,12 +103,6 @@
 			"is_cs": false
 		},
 		"宝石商リチャード氏の謎鑑定": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"はてな☆イリュージョン": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
@@ -177,12 +159,6 @@
 		"22/7": {
 			"start_time": "23:00",
 			"weekday": "土",
-			"station": "",
-			"is_cs": false
-		},
-		"異種族レビュアーズ": {
-			"start_time": "",
-			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
@@ -271,12 +247,6 @@
 			"is_cs": false
 		},
 		"ゾイドワイルド ZERO": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"魔入りました 入間くん": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",

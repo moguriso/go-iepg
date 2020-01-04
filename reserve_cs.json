@@ -73,8 +73,8 @@
 			"is_cs": true
 		},
 		"宝石商リチャード氏の謎鑑定": {
-			"start_time": "23:30",
-			"weekday": "木",
+			"start_time": "15:30",
+			"weekday": "土",
 			"station": "AT−X",
 			"is_cs": true
 		},
@@ -251,6 +251,18 @@
 			"weekday": "土",
 			"station": "",
 			"is_cs": true
+		},
+		"はてな☆イリュージョン": {
+			"start_time": "23:30",
+			"weekday": "木",
+			"station": "",
+			"is_cs": true
+		},
+		"魔入りました 入間くん": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
 		},
 		"神のみぞ知るセカイ": {
 			"start_time": "24:30",
