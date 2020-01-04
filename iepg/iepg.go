@@ -217,6 +217,10 @@ func convertStation(in string) string {
 		return "日本テレビ"
 	} else if strings.Contains(in, "テレビ朝日") {
 		return "テレビ朝日"
+	} else if strings.Contains(in, "NHK総合") {
+		return "NHK総合"
+	} else if strings.Contains(in, "NHKEテレ") {
+		return "NHK教育"
 	}
 	return ""
 }
