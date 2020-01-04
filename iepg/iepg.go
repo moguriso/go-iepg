@@ -36,7 +36,7 @@ func getReadData(dp *p.DynamicParam) []*pl.ReadData {
 		return nil
 	}
 
-	r := pl.ParseSection(doc, dp.IsCs)
+	r := pl.ParseSection(doc, dp.IsCs, dp.IsRecReAir)
 	return r
 }
 

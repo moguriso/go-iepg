@@ -18,6 +18,7 @@ type DynamicParam struct {
 	Station    string
 	WeekDay    string
 	IsCs       bool
+	IsRecReAir bool
 }
 
 func LoadStaticParam(fileName string) *StaticParam {
@@ -66,6 +67,12 @@ func LoadDynamicParam(fileName string) []*DynamicParam {
 		res.Station, _ = v.(map[string]interface{})["station"].(string)
 		res.WeekDay, _ = v.(map[string]interface{})["weekday"].(string)
 		res.IsCs, _ = v.(map[string]interface{})["is_cs"].(bool)
+		re, is := v.(map[string]interface{})["is_rec_re_air"].(bool)
+		if is {
+			res.IsRecReAir = re
+		} else {
+			res.IsRecReAir = false
+		}
 		ret = append(ret, res)
 	}
 	return ret

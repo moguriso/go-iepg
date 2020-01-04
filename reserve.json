@@ -220,7 +220,8 @@
 			"start_time": "",
 			"weekday": "月",
 			"station": "MX",
-			"is_cs": false
+			"is_cs": false,
+			"is_rec_re_air": true
 		},
 		"もう笑点": {
 			"start_time": "",

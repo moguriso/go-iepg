@@ -51,7 +51,7 @@ func ParseFindCount(doc *goquery.Document) int {
 	return c
 }
 
-func ParseSection(doc *goquery.Document, isCs bool) []*ReadData {
+func ParseSection(doc *goquery.Document, isCs bool, isRecReAir bool) []*ReadData {
 	selection := doc.Find("#main > div:nth-child(7) > ul")
 	innserSelection := selection.Find("li")
 
@@ -86,7 +86,7 @@ func ParseSection(doc *goquery.Document, isCs bool) []*ReadData {
 		title := ParseTitle(s)
 		res.Title = title
 		re := ParseRe(s)
-		if strings.Contains(re, "再") {
+		if strings.Contains(re, "再") && !isRecReAir {
 			res.Re = true
 		}
 		if isCs {
