@@ -30,12 +30,6 @@
 			"station": "",
 			"is_cs": false
 		},
-		"ID:INVADED": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
 		"pet": {
 			"start_time": "22:00",
 			"weekday": "月",
@@ -50,7 +44,7 @@
 		},
 		"映像研には手を出すな": {
 			"start_time": "",
-			"weekday": "",
+			"weekday": "日",
 			"station": "",
 			"is_cs": false
 		},
@@ -253,12 +247,6 @@
 			"is_cs": false
 		},
 		"Fate/Grand Order 絶対魔獣戦線バビロニア": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"バビロン": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
