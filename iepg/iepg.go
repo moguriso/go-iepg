@@ -59,7 +59,12 @@ func PrintReserve(dp *p.DynamicParam) {
 			fmt.Println("Content-type: application/x-tv-program-info; charset=shift_jis")
 			fmt.Println("version: 1")
 			fmt.Println("station: " + convertStation(v.Station))
-			fmt.Println("year: " + fmt.Sprintf("%04d", time.Now().Year()))
+			mon := int(time.Now().Month())
+			if (mon == 12) && (v.Month < mon) {
+				fmt.Println("year: " + fmt.Sprintf("%04d", time.Now().Year()+1))
+			} else {
+				fmt.Println("year: " + fmt.Sprintf("%04d", time.Now().Year()))
+			}
 			fmt.Println("month: " + fmt.Sprintf("%02d", v.Month))
 			fmt.Println("date: " + fmt.Sprintf("%02d", v.Date))
 			fmt.Println("start: " + fmt.Sprintf("%02d:%02d", v.Start_h, v.Start_m))
@@ -180,7 +185,12 @@ func OutputIepg(fileName string, in *pl.ReadData) {
 	_, err = sjisWriter.WriteString("Content-type: application/x-tv-program-info; charset=shift_jis\n")
 	_, err = sjisWriter.WriteString("version: 1\n")
 	_, err = sjisWriter.WriteString("station: " + convertStation(in.Station) + "\n")
-	_, err = sjisWriter.WriteString("year: " + fmt.Sprintf("%04d", time.Now().Year()) + "\n")
+	mon := int(time.Now().Month())
+	if (mon == 12) && (in.Month < mon) {
+		_, err = sjisWriter.WriteString("year: " + fmt.Sprintf("%04d", time.Now().Year()+1) + "\n")
+	} else {
+		_, err = sjisWriter.WriteString("year: " + fmt.Sprintf("%04d", time.Now().Year()) + "\n")
+	}
 	_, err = sjisWriter.WriteString("month: " + fmt.Sprintf("%02d", in.Month) + "\n")
 	_, err = sjisWriter.WriteString("date: " + fmt.Sprintf("%02d", in.Date) + "\n")
 	_, err = sjisWriter.WriteString("start: " + fmt.Sprintf("%02d:%02d", in.Start_h, in.Start_m) + "\n")
