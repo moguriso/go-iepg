@@ -6,6 +6,7 @@ import (
 	"go-iepg/iepg"
 	"go-iepg/param"
 	"os"
+	"time"
 )
 
 var (
@@ -23,5 +24,6 @@ func main() {
 	d_conf := param.LoadDynamicParam(*reserveFile)
 	for _, v := range d_conf {
 		iepg.Reserve(v)
+		time.Sleep(2 * time.Second)
 	}
 }
