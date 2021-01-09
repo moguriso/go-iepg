@@ -1,188 +1,338 @@
 {
 	"reserve_info": {
-		"八十亀ちゃんかんさつにっき": {
+		"IDOLY PRIDE": {
 			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"WIXOSS DIVA LIVE": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"裏世界ピクニック": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"EX-ARM エクスアーム": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"SK エスケーエイト": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"おとなの防具屋さん": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"オルタンシア サーガ": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"俺だけ入れる隠しダンジョン": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"怪病医ラムネ": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"回復術士のやり直し": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"蜘蛛ですが なにか": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"ゲキドル": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"怪物事変": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"弱キャラ友崎くん": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"真 中華一番": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"装甲娘戦機": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"たとえばラストダンジョン前の村の少年が序盤の街で暮らすような物語": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"天空侵犯": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"転生したらスライムだった件": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"天地創造デザイン部": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"Dr.STONE": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"のんのんびより のんすとっぷ": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"はたらく細胞": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"バック アロウ": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"BEASTARS": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"プレイタの傷": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"舞妓さんちのまかないさん": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"魔術士オーフェンはぐれ旅": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"無職転生": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"約束のネバーランド": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"八十亀ちゃんかんさつにっき": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"ゆるキャン": {
+			"start_time": ":",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
 		"Re:ゼロから始める異世界生活": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"ワールドトリガー": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"ワールドウィッチーズ発進しますっ": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"ワンダーエッグ プライオリティ": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"僕のヒーローアカデミア": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"相棒": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
-		"恋する小惑星": {
+		"呪術廻戦": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
-		"ダーウィンズゲーム": {
+		"ドラゴンクエスト ダイの大冒険": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
-		"マギアレコード 魔法少女まどか☆マギカ外伝": {
+		"半妖の夜叉姫": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
-		"pet": {
-			"start_time": "22:00",
-			"weekday": "月",
-			"station": "",
-			"is_cs": false
-		},
-		"おーばーふろぉ": {
+		"NOBLESSE": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
-		"映像研には手を出すな": {
-			"start_time": "",
-			"weekday": "日",
-			"station": "",
-			"is_cs": false
-		},
-		"へやキャン": {
+		"魔王城でおやすみ": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
-		"群れなせ シートン学園": {
+		"池袋ウエストゲートパーク": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
-		"なつなぐ": {
+		"キミと僕の最後の戦場、あるいは世界が始まる聖戦": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
-		"ブレーカーズ": {
-			"start_time": "18:45",
-			"weekday": "火",
-			"station": "",
-			"is_cs": false
-		},
-		"魔術士オーフェンはぐれ旅": {
+		"安達としまむら": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
-		"痛いのは嫌なので防御力に極振りしたいと思います": {
+		"ご注文はうさぎですか BLOOM": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
-		"空挺ドラゴンズ": {
+		"憂国のモリアーティ": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
-		"Infinite Dendrogram インフィニット デンドログラム": {
+		"おちこぼれフルーツタルト": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
-		"宝石商リチャード氏の謎鑑定": {
+		"おそ松さん": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
-		"ソマリと森の神様": {
+		"それだけがネック": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
-		"推しが武道館いってくれたら死ぬ": {
+		"禍つヴァールハイト": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
-		"地縛少年花子くん": {
+		"テイルズ オブ クレストリア": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
-		"理系が恋に落ちたので証明してみた": {
+		"ひぐらしのなく頃に": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
-		"とある科学の超電磁砲レールガンT": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"ランウェイで笑って": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"言霊少女": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"ぼくのとなりに暗黒破壊神がいます": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"22/7": {
-			"start_time": "23:00",
+		"よしもと新喜劇": {
+			"start_time": "13:00",
 			"weekday": "土",
 			"station": "",
 			"is_cs": false
 		},
-		"虚構推理": {
+		"デジモンアドベンチャー": {
 			"start_time": "",
 			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"ドロヘドロ": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"異世界かるてっと2": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"GRANBLUE FANTASY The Animation ジータ篇": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"相棒 season 18": {
-			"start_time": "21:00",
-			"weekday": "水",
 			"station": "",
 			"is_cs": false
 		},
@@ -204,24 +354,12 @@
 			"station": "",
 			"is_cs": false
 		},
-		"ゲゲゲの鬼太郎": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
 		"ブラッククローバー": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
-			"is_cs": false
-		},
-		"よしもと新喜劇": {
-			"start_time": "",
-			"weekday": "月",
-			"station": "MX",
 			"is_cs": false,
-			"is_rec_re_air": true
+			"is_rec_re_air": false
 		},
 		"もう笑点": {
 			"start_time": "",
@@ -239,37 +377,32 @@
 			"start_time": "",
 			"weekday": "",
 			"station": "",
-			"is_cs": false
+			"is_cs": false,
+			"is_rec_re_air": false
 		},
-		"ゾイドワイルド ZERO": {
+		"GREAT PRETENDER": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
-		"Fate/Grand Order 絶対魔獣戦線バビロニア": {
+		"ホリミヤ": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
-		"ファンタシースターオンライン": {
+		"文豪ストレイドッグス": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
-		"僕のヒーローアカデミア": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"ちはやふる": {
+		"炎炎ノ消防隊 弐ノ章": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		}
 	}
-}																				   
+}
