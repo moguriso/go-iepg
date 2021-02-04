@@ -7,12 +7,17 @@ import (
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
+	aw "github.com/moguriso/agouti_wrapper"
 
 	"go-iepg/log"
+	"golang.org/x/text/unicode/norm"
+	"time"
 )
 
-const YAHOO_ENDPOINT = "https://tv.yahoo.co.jp/search/?q="
-const APPEND_QUERY = "&a=23&oa=1&t="
+const YAHOO_ENDPOINT = "https://tv.yahoo.co.jp/search?q="
+
+// const APPEND_QUERY = "&a=23&oa=1&t="
+const APPEND_QUERY = "&g=&d=&ob=&oc=&dts=0&dte=0&a=23&t="
 
 type ReadData struct {
 	Station string
@@ -29,10 +34,34 @@ type ReadData struct {
 	IsCs    bool
 }
 
+//func Search(target string, ch string) *aw.Page {
 func Search(target string, ch string) *goquery.Document {
 	title := strings.ReplaceAll(target, "%20", " ")
 	title = strings.ReplaceAll(title, " ", "%20")
-	doc, err := goquery.NewDocument(YAHOO_ENDPOINT + title + APPEND_QUERY + ch) // 0=tidigi, 2=cs
+
+	driver, err := aw.GetWebDriver()
+	defer driver.Stop()
+	if err != nil {
+		log.L.Fatal("Search: ", err)
+		return nil
+	}
+
+	page, err := driver.NewPage()
+	if err != nil {
+		log.L.Fatal("Search: ", err)
+		return nil
+	}
+	log.L.Info("uri = ", YAHOO_ENDPOINT+title+APPEND_QUERY+ch)
+	page.Navigate(YAHOO_ENDPOINT + title + APPEND_QUERY + ch)
+	time.Sleep(500 * time.Millisecond)
+	//page.Screenshot("./Screen.png")
+	//return page
+
+	// doc, err := goquery.NewDocument(YAHOO_ENDPOINT + title + APPEND_QUERY + ch) // 0=tidigi, 2=cs
+	//doc, err := goquery.NewDocument(YAHOO_ENDPOINT + title + APPEND_QUERY + ch) // 3=tidigi, 1=cs
+	ht, _ := page.HTML()
+	red := strings.NewReader(ht)
+	doc, err := goquery.NewDocumentFromReader(red)
 	if err != nil {
 		log.L.Error("document not found. ")
 		return nil
@@ -52,8 +81,14 @@ func ParseFindCount(doc *goquery.Document) int {
 }
 
 func ParseSection(doc *goquery.Document, isCs bool, isRecReAir bool) []*ReadData {
-	selection := doc.Find("#main > div:nth-child(7) > ul")
+	//ht, _ := doc.Html()
+	//log.L.Info("zzz: ", ht)
+	// selection := doc.Find("#main > div:nth-child(7) > ul")
+	selection := doc.Find("#__next > div > main > div.inner > article > div.innerMain > section > ul")
+	//ht = selection.Text()
+	//log.L.Info("selection: ", ht)
 	innserSelection := selection.Find("li")
+	//log.L.Info("innserSelection: ", innserSelection)
 
 	var ret []*ReadData
 	innserSelection.Each(func(_ int, s *goquery.Selection) {
@@ -71,19 +106,38 @@ func ParseSection(doc *goquery.Document, isCs bool, isRecReAir bool) []*ReadData
 			IsCs:    false,
 		}
 		wd := ParseWeekDay(s)
-		log.L.Error("weekday = " + wd)
+		if wd == "" {
+			log.L.Error("weekday is not available")
+			return
+		}
 		res.WeekDay = wd
 		station := ParseStation(s)
+		if station == "" {
+			log.L.Error("station is not available")
+			return
+		}
 		res.Station = station
 		month, date, _ := ParseDate(s)
+		if month == "" || date == "" {
+			log.L.Error("month or date is not available")
+			return
+		}
 		res.Month, _ = strconv.Atoi(month)
 		res.Date, _ = strconv.Atoi(date)
 		start_time, end_time := ParseTime(s)
+		if start_time == "" || end_time == "" {
+			log.L.Error("start/end time is not available")
+			return
+		}
 		res.Start_h, _ = strconv.Atoi(start_time[:2])
 		res.Start_m, _ = strconv.Atoi(start_time[3:])
 		res.End_h, _ = strconv.Atoi(end_time[:2])
 		res.End_m, _ = strconv.Atoi(end_time[3:])
 		title := ParseTitle(s)
+		if title == "" {
+			log.L.Error("title is not available")
+			return
+		}
 		res.Title = title
 		re := ParseRe(s)
 		if strings.Contains(re, "再") && !isRecReAir {
@@ -96,6 +150,7 @@ func ParseSection(doc *goquery.Document, isCs bool, isRecReAir bool) []*ReadData
 		log.L.Debug(res)
 		ret = append(ret, res)
 	})
+	log.L.Info("ccc: ret = ", ret)
 	return ret
 }
 
@@ -112,31 +167,37 @@ func getDate(in string) (string, string, string) {
 }
 func ParseDate(doc *goquery.Selection) (string, string, string) {
 	d := ""
-	doc.Find("#main > div:nth-child(7) > ul > li > div.leftarea > p.yjMS > em").Each(func(_ int, s *goquery.Selection) {
+	//doc.Find("#main > div:nth-child(7) > ul > li > div.leftarea > p.yjMS > em").Each(func(_ int, s *goquery.Selection) {
+	doc.Find("#__next > div > main > div.inner > article > div.innerMain > section > ul > li:nth-child(1) > div.programListItemDate > div > time:nth-child(1) > span:nth-child(1)").Each(func(_ int, s *goquery.Selection) {
 		d = s.Text()
 	})
+	log.L.Info("date = ", d)
 
 	month, date, sub_date := getDate(d)
 	if (month == "") || (date == "") {
 		return "", "", ""
 	}
+	log.L.Info("date = ", month, " ", date, " ", sub_date)
 	return month, date, sub_date
 }
 
 func ParseWeekDay(doc *goquery.Selection) string {
 	d := ""
 	//doc.Find("#main > div:nth-child(7) > ul > li:nth-child(1) > div.leftarea > p.yjMS").Each(func(_ int, s *goquery.Selection) {
-	doc.Find("#main > div > ul > li > div.leftarea > p.yjMS").Each(func(_ int, s *goquery.Selection) {
+	// doc.Find("#main > div > ul > li > div.leftarea > p.yjMS").Each(func(_ int, s *goquery.Selection) {
+	doc.Find("#__next > div > main > div.inner > article > div.innerMain > section > ul > li:nth-child(1) > div.programListItemDate > div > time:nth-child(1) > span.scheduleTextWeek").Each(func(_ int, s *goquery.Selection) {
 		d = s.Text()
 	})
-	b := ""
-	//doc.Find("#main > div:nth-child(7) > ul > li > div.leftarea > p.yjMS > em").Each(func(_ int, s *goquery.Selection) {
-	doc.Find("#main > div > ul > li > div.leftarea > p.yjMS > em").Each(func(_ int, s *goquery.Selection) {
-		b = s.Text()
-	})
-	//d = d[strings.Index(d, "（")+1 : strings.Index(d, "）")]
-	d = strings.Trim(d, b)
-	//d = strings.TrimRight(d, "）")
+	//log.L.Info("ParseWeekDay: ", d)
+	// b := ""
+	// //doc.Find("#main > div:nth-child(7) > ul > li > div.leftarea > p.yjMS > em").Each(func(_ int, s *goquery.Selection) {
+	// doc.Find("#main > div > ul > li > div.leftarea > p.yjMS > em").Each(func(_ int, s *goquery.Selection) {
+	// 	b = s.Text()
+	// })
+	// //d = d[strings.Index(d, "（")+1 : strings.Index(d, "）")]
+	// d = strings.Trim(d, b)
+	// //d = strings.TrimRight(d, "）")
+	log.L.Info("week day = ", d)
 	return d
 }
 
@@ -157,29 +218,44 @@ func getTime(in string) (string, string) {
 }
 
 func ParseTime(doc *goquery.Selection) (string, string) {
-	tm_range := ""
-	doc.Find("#main > div > ul > li > div.leftarea > p > em").Each(func(_ int, s *goquery.Selection) {
-		tm_range = s.Text()
+	//tm_range := ""
+	//doc.Find("#main > div > ul > li > div.leftarea > p > em").Each(func(_ int, s *goquery.Selection) {
+	start_time := ""
+	doc.Find("#__next > div > main > div.inner > article > div.innerMain > section > ul > li:nth-child(1) > div.programListItemDate > div > time:nth-child(1) > span:nth-child(3)").Each(func(_ int, s *goquery.Selection) {
+		start_time = s.Text()
 	})
-	start_time, end_time := getTime(tm_range)
+	end_time := ""
+	doc.Find("#__next > div > main > div.inner > article > div.innerMain > section > ul > li:nth-child(1) > div.programListItemDate > div > time:nth-child(3) > span").Each(func(_ int, s *goquery.Selection) {
+		end_time = s.Text()
+	})
+	log.L.Info("start/end: ", start_time, "～", end_time)
+	// start_time, end_time := getTime(tm_range)
 	return start_time, end_time
 }
 
 func ParseStation(doc *goquery.Selection) string {
 	station := ""
-	doc.Find("#main > div > ul > li > div.rightarea > p:nth-child(2) > span.pr35").Each(func(_ int, s *goquery.Selection) {
+	// doc.Find("#main > div > ul > li > div.rightarea > p:nth-child(2) > span.pr35").Each(func(_ int, s *goquery.Selection) {
+	doc.Find("#__next > div > main > div.inner > article > div.innerMain > section > ul > li:nth-child(1) > div.channel > p").Each(func(_ int, s *goquery.Selection) {
 		station = s.Text()
 	})
-	log.L.Debug(station)
+	log.L.Info("station = ", station)
 	return station
 }
 
 func ParseTitle(doc *goquery.Selection) string {
 	title := ""
-	doc.Find("#main > div > ul > li > div.rightarea > p.yjLS.pb5p > a").Each(func(_ int, s *goquery.Selection) {
+	// doc.Find("#main > div > ul > li > div.rightarea > p.yjLS.pb5p > a").Each(func(_ int, s *goquery.Selection) {
+	doc.Find("#__next > div > main > div.inner > article > div.innerMain > section > ul > li:nth-child(1) > div.programListItemTitleGroup > h3 > a").Each(func(_ int, s *goquery.Selection) {
 		title = s.Text()
 	})
 	title = strings.ReplaceAll(title, "　", " ")
+	title = strings.ReplaceAll(title, "＃", "#")
+	s := title
+	s = string(norm.NFKC.Bytes([]byte(s)))
+	log.L.Info(s)
+	title = s
+
 	log.L.Info("before:", title)
 	if r := convertEpisodeNumber(title); r != "" {
 		title = r
@@ -187,6 +263,7 @@ func ParseTitle(doc *goquery.Selection) string {
 	} else {
 		log.L.Debug("title episode convert \"no need\" or \"error\"")
 	}
+	log.L.Info("title: ", title)
 	return title
 }
 
@@ -220,10 +297,14 @@ func convertEpisodeNumber(in string) string {
 
 func ParseRe(doc *goquery.Selection) string {
 	re := ""
-	doc.Find("#main > div > ul > li > div.rightarea > p.yjLS.pb5p > span").Each(func(_ int, s *goquery.Selection) {
-		re = s.Text()
-	})
-	re = strings.ReplaceAll(re, "　", " ")
-	log.L.Error(re)
+	is_repeat := doc.HasClass("iconRepeat")
+	if is_repeat {
+		re = "再"
+	}
+	//doc.Find("#main > div > ul > li > div.rightarea > p.yjLS.pb5p > span").Each(func(_ int, s *goquery.Selection) {
+	//	re = s.Text()
+	//})
+	// re = strings.ReplaceAll(re, "　", " ")
+	log.L.Info(re)
 	return re
 }

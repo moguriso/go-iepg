@@ -14,6 +14,7 @@ type StaticParam struct {
 
 type DynamicParam struct {
 	Title      string
+	IgnorTitle string
 	Start_time string
 	Station    string
 	WeekDay    string
@@ -58,11 +59,16 @@ func LoadDynamicParam(fileName string) []*DynamicParam {
 	for k, v := range d {
 		res := &DynamicParam{
 			Title:      "",
+			IgnorTitle: "",
 			Start_time: "",
 			Station:    "",
 			IsCs:       false,
 		}
 		res.Title = k
+		ig, is_avail := v.(map[string]interface{})["ignore"].(string)
+		if is_avail {
+			res.IgnorTitle = ig
+		}
 		res.Start_time, _ = v.(map[string]interface{})["start_time"].(string)
 		res.Station, _ = v.(map[string]interface{})["station"].(string)
 		res.WeekDay, _ = v.(map[string]interface{})["weekday"].(string)

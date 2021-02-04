@@ -26,9 +26,10 @@ const (
 )
 
 func getReadData(dp *p.DynamicParam) []*pl.ReadData {
-	ch := "0"
+	ch := "3"
 	if dp.IsCs {
-		ch = "1&t=2"
+		// ch = "1&t=2"
+		ch = "1"
 	}
 
 	doc := pl.Search(dp.Title, ch)
@@ -36,6 +37,8 @@ func getReadData(dp *p.DynamicParam) []*pl.ReadData {
 		return nil
 	}
 
+	log.L.Info("title: ", dp.Title)
+	log.L.Info("doc: ", doc)
 	r := pl.ParseSection(doc, dp.IsCs, dp.IsRecReAir)
 	return r
 }
@@ -75,6 +78,18 @@ func PrintReserve(dp *p.DynamicParam) {
 }
 
 func confirmTitle(src, dst string) bool {
+	s := strings.ReplaceAll(strings.ToLower(src), "　", " ")
+	d := strings.ReplaceAll(strings.ToLower(dst), "　", " ")
+	md := strings.Split(d, " ")
+	for _, v := range md {
+		if strings.Contains(s, v) {
+			return true
+		}
+	}
+	return false
+}
+
+func isIgnoredTitle(src, dst string) bool {
 	s := strings.ReplaceAll(strings.ToLower(src), "　", " ")
 	d := strings.ReplaceAll(strings.ToLower(dst), "　", " ")
 	md := strings.Split(d, " ")
@@ -148,6 +163,9 @@ func Reserve(dp *p.DynamicParam) {
 		if !confirmTitle(v.Title, dp.Title) {
 			log.L.Error("failed to reserve [ " + v.Title + "]")
 			log.L.Error("title unmatch src[" + v.Title + "]  [" + dp.Title + "]")
+		} else if isIgnoredTitle(v.Title, dp.IgnorTitle) {
+			log.L.Error("failed to reserve [ " + v.Title + "]")
+			log.L.Error("title ignored src[" + v.Title + "]  [" + dp.IgnorTitle + "]")
 		} else if !confirmStartTime(v.Start_h, v.Start_m, dp.Start_time) {
 			log.L.Error("failed to reserve [ " + v.Title + "]")
 			log.L.Error("start time unmatch src[" + fmt.Sprintf("%02d:%02d", v.Start_h, v.Start_m) + "]  [" + dp.Start_time + "]")
@@ -205,15 +223,16 @@ func OutputIepg(fileName string, in *pl.ReadData) {
 }
 
 func convertStation(in string) string {
-	if strings.Contains(in, "TOKYO　MX") {
+	//if strings.Contains(in, "TOKYO　MX") {
+	if strings.Contains(in, "東京メトロポリタンテレビジョン") {
 		return "TOKYO MX"
-	} else if strings.Contains(in, "ＴＢＳ") || strings.Contains(in, "TBS") {
+	} else if strings.Contains(in, "東京放送") || strings.Contains(in, "ＴＢＳ") || strings.Contains(in, "TBS") {
 		return "ＴＢＳテレビ"
 	} else if strings.Contains(in, "テレビ東京") {
 		return "テレビ東京"
-	} else if strings.Contains(in, "フジテレビ") {
+	} else if strings.Contains(in, "フジテレビジョン") {
 		return "フジテレビ"
-	} else if strings.Contains(in, "日テレ") {
+	} else if strings.Contains(in, "日本テレビ放送網") {
 		return "日本テレビ"
 	} else if strings.Contains(in, "テレビ朝日") {
 		return "テレビ朝日"
