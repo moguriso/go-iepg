@@ -198,7 +198,8 @@ func parseTime(doc *goquery.Selection) (string, string) {
 		end_time = s.Text()
 	})
 	log.L.Info("start/end: ", start_time, "～", end_time)
-	return start_time, end_time
+	//return start_time, end_time
+	return getTime(start_time + "～" + end_time)
 }
 
 func parseStation(doc *goquery.Selection) string {
