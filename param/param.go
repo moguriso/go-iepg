@@ -7,6 +7,29 @@ import (
 	"go-iepg/log"
 )
 
+type CHANNEL_MODE int
+
+const (
+	NO_MODE CHANNEL_MODE = iota
+	TIDEGI_MODE
+	CS_MODE
+)
+
+type ReadData struct {
+	Station string
+	Year    int
+	Month   int
+	Date    int
+	Start_h int
+	Start_m int
+	End_h   int
+	End_m   int
+	Title   string
+	Re      bool
+	WeekDay string
+	IsCs    bool
+}
+
 type StaticParam struct {
 	PlumagePath  string
 	TempFileName string

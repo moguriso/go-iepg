@@ -25,14 +25,15 @@ const (
 	CS
 )
 
-func getReadData(dp *p.DynamicParam) []*pl.ReadData {
-	ch := "3"
+func getReadData(dp *p.DynamicParam) []*p.ReadData {
+	mode := p.NO_MODE
 	if dp.IsCs {
-		// ch = "1&t=2"
-		ch = "1"
+		mode = p.CS_MODE
+	} else {
+		mode = p.TIDEGI_MODE
 	}
 
-	doc := pl.Search(dp.Title, ch)
+	doc := pl.Search(dp.Title, mode)
 	if doc == nil {
 		return nil
 	}
@@ -199,7 +200,7 @@ func Reserve(dp *p.DynamicParam) {
 	}
 }
 
-func OutputIepg(fileName string, in *pl.ReadData) {
+func OutputIepg(fileName string, in *p.ReadData) {
 	fp, err := os.OpenFile(fileName, os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		panic(err)
