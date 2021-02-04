@@ -9,28 +9,11 @@ import (
 	"github.com/PuerkitoBio/goquery"
 	p "go-iepg/param"
 
-	"github.com/sclevine/agouti"
+	aw "github.com/moguriso/agouti_wrapper"
 	"go-iepg/log"
 	"golang.org/x/text/unicode/norm"
 	"time"
 )
-
-func getWebDriver() (*agouti.WebDriver, error) {
-	//ua := "--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36"
-
-	driver := agouti.ChromeDriver(
-		agouti.ChromeOptions("args", []string{
-			"--headless",
-			"--no-sandbox",
-			//"--disable-gpu",
-			//"--disable-blink-features=AutomationControlled",
-			"--window-size=1280,720",
-		}),
-		agouti.Debug,
-	)
-	err := driver.Start()
-	return driver, err
-}
 
 const KINGDOM_ENDPOINT = "https://www.tvkingdom.jp/schedulesBySearch.action?condition.genres[0].parentId=-1&condition.genres[0].childId=-1&stationPlatformId=4&submit=検索&condition.keyword="
 
@@ -38,8 +21,7 @@ func Search(target string) *goquery.Document {
 	title := strings.ReplaceAll(target, "%20", " ")
 	title = strings.ReplaceAll(title, " ", "%20")
 
-	//driver, err := aw.GetWebDriver()
-	driver, err := getWebDriver()
+	driver, err := aw.GetWebDriver()
 	defer driver.Stop()
 	if err != nil {
 		log.L.Fatal("Search: ", err)
@@ -51,15 +33,10 @@ func Search(target string) *goquery.Document {
 		log.L.Fatal("Search: ", err)
 		return nil
 	}
-	//page.Navigate(KINGDOM_BASE_ENDPOINT)
-	//page.FindByID("condition_keyword").Fill(title)
-	//time.Sleep(250 * time.Millisecond)
-	//page.FindByName("submit").Click()
-	//time.Sleep(250 * time.Millisecond)
 	log.L.Info("uri = ", KINGDOM_ENDPOINT+title)
+
 	page.Navigate(KINGDOM_ENDPOINT + title)
 	time.Sleep(500 * time.Millisecond)
-	//page.Screenshot("./temp.png")
 
 	ht, _ := page.HTML()
 	red := strings.NewReader(ht)
@@ -73,9 +50,7 @@ func Search(target string) *goquery.Document {
 
 func ParseSection(doc *goquery.Document, isCs bool, isRecReAir bool) []*p.ReadData {
 	selection := doc.Find("div.contBlockNB")
-	//log.L.Info("ParseSection: ", selection.Text())
 	innserSelection := selection.Find("div")
-	//log.L.Info("ParseSection: ", innserSelection.Text())
 
 	var ret []*p.ReadData
 	innserSelection.Each(func(_ int, s *goquery.Selection) {
@@ -92,12 +67,10 @@ func ParseSection(doc *goquery.Document, isCs bool, isRecReAir bool) []*p.ReadDa
 			Re:      false,
 			IsCs:    false,
 		}
-		//ht, _ := s.Html()
-		//log.L.Info("selection: ", ht)
 		ht := s.Text()
 		ht = strings.ReplaceAll(ht, "\n", "")
 		ht = strings.ReplaceAll(ht, " ", "")
-		log.L.Info("selection(text): ", ht)
+		//log.L.Info("selection(text): ", ht)
 		if ht == "" || strings.Contains(ht, "件中") || strings.Contains(ht, "googletag.cmd.push") || strings.Contains(ht, "条件に該当する番組はありません") {
 			return
 		}
@@ -216,7 +189,7 @@ func parseTime(doc *goquery.Selection) (string, string) {
 	start_time := strings.ReplaceAll(md[2], "\n", " ")
 	end_time := strings.ReplaceAll(md[4], "\n", " ")
 	log.L.Info("start/end: ", start_time, "～", end_time)
-	return start_time, end_time
+	return getTime(start_time + "～" + end_time)
 }
 
 func parseStation(doc *goquery.Selection) string {
