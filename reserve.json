@@ -1,88 +1,11 @@
 {
 	"reserve_info": {
-		"IDOLY PRIDE": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"WIXOSS DIVA LIVE": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"裏世界ピクニック": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"EX-ARM エクスアーム": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"SK エスケーエイト": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"おとなの防具屋さん": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"オルタンシア サーガ": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"俺だけ入れる隠しダンジョン": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"怪病医ラムネ": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"回復術士のやり直し": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"蜘蛛ですが なにか": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"ゲキドル": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"怪物事変": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
 		"弱キャラ友崎くん": {
 			"start_time": ":",
 			"weekday": "",
 			"station": "",
-			"is_cs": false
+			"is_cs": false,
+			"is_rec_re_air": false
 		},
 		"真 中華一番": {
 			"start_time": ":",
@@ -156,12 +79,6 @@
 			"station": "",
 			"is_cs": false
 		},
-		"舞妓さんちのまかないさん": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
 		"魔術士オーフェンはぐれ旅": {
 			"start_time": ":",
 			"weekday": "",
@@ -175,12 +92,6 @@
 			"is_cs": false
 		},
 		"約束のネバーランド": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"八十亀ちゃんかんさつにっき": {
 			"start_time": ":",
 			"weekday": "",
 			"station": "",
@@ -216,12 +127,6 @@
 			"station": "",
 			"is_cs": false
 		},
-		"僕のヒーローアカデミア": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
 		"相棒": {
 			"start_time": "",
 			"weekday": "",
@@ -246,73 +151,7 @@
 			"station": "",
 			"is_cs": false
 		},
-		"NOBLESSE": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"魔王城でおやすみ": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"池袋ウエストゲートパーク": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"キミと僕の最後の戦場、あるいは世界が始まる聖戦": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"安達としまむら": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"ご注文はうさぎですか BLOOM": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"憂国のモリアーティ": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"おちこぼれフルーツタルト": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
 		"おそ松さん": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"それだけがネック": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"禍つヴァールハイト": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"テイルズ オブ クレストリア": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
@@ -378,13 +217,8 @@
 			"weekday": "",
 			"station": "",
 			"is_cs": false,
+			"ignore": "傑作選",
 			"is_rec_re_air": false
-		},
-		"GREAT PRETENDER": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
 		},
 		"ホリミヤ": {
 			"start_time": "",
@@ -393,12 +227,6 @@
 			"is_cs": false
 		},
 		"文豪ストレイドッグス": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"炎炎ノ消防隊 弐ノ章": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",

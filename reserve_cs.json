@@ -1,39 +1,75 @@
 {
 	"reserve_info": {
+		"アキハバラ電脳組 2011年の夏休み": {
+			"start_time": "15:00",
+			"weekday": "土",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"アキハバラ電脳組": {
+			"start_time": "12:30",
+			"weekday": "",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"交響詩篇エウレカセブン ハイエボリューション": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"交響詩篇エウレカセブン ポケットが虹でいっぱい": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"ワールドウィッチーズ発進しますっ": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"エウレカセブンAO": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"空挺ドラゴンズ": {
+			"start_time": "23:00",
+			"weekday": "日",
+			"station": "AT-X",
+			"is_cs": true
+		},
 		"ひぐらしのなく頃に": {
 			"start_time": "22:00",
 			"weekday": "金",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"ドラゴンクエスト ダイの大冒険": {
 			"start_time": "22:30",
 			"weekday": "金",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"土下座で頼んでみた": {
 			"start_time": "4:00",
 			"weekday": "火",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"おそ松さん": {
 			"start_time": "21:00",
 			"weekday": "木",
-			"station": "AT−X",
-			"is_cs": true
-		},
-		"中二病でも恋がしたい": {
-			"start_time": "22:00",
-			"weekday": "木",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"地球防衛企業 ダイ ガード": {
 			"start_time": "8:30",
 			"weekday": "火",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"BORUTO": {
@@ -45,247 +81,187 @@
 		"ゼロから始める異世界生活": {
 			"start_time": "22:30",
 			"weekday": "水",
-			"station": "AT−X",
-			"is_cs": true
-		},
-		"装甲騎兵ボトムズ": {
-			"start_time": "20:00",
-			"weekday": "水",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"絶園のテンペスト": {
 			"start_time": "20:00",
 			"weekday": "月",
-			"station": "AT−X",
-			"is_cs": true
-		},
-		"BLUE SEED": {
-			"start_time": "20:30",
-			"weekday": "月",
-			"station": "AT−X",
-			"is_cs": true
-		},
-		"舟を編む": {
-			"start_time": "21:30",
-			"weekday": "土",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"僕らはみんな河合荘": {
 			"start_time": "21:00",
 			"weekday": "土",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"revisions": {
-			"start_time": "21:30",
-			"weekday": "水",
-			"station": "AT−X",
+			"start_time": "23:00",
+			"weekday": "日",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"虫籠のカガステル": {
 			"start_time": "20:00",
 			"weekday": "金",
-			"station": "AT−X",
-			"is_cs": true
-		},
-		"繰繰れ コックリさん": {
-			"start_time": "22:30",
-			"weekday": "火",
-			"station": "AT−X",
-			"is_cs": true
-		},
-		"なんでここに先生が": {
-			"start_time": "28:00",
-			"weekday": "日",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"WHITE ALBUM": {
 			"start_time": "20:30",
 			"weekday": "火",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"それゆけ 宇宙戦艦ヤマモト ヨーコ": {
 			"start_time": "22:00",
 			"weekday": "水",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"たとえばラストダンジョン前の村の少年が序盤の街で暮らすような物語": {
 			"start_time": "22:00",
 			"weekday": "月",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"天地創造デザイン部": {
 			"start_time": "23:30",
 			"weekday": "木",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"弱キャラ友崎くん": {
 			"start_time": "21:00",
 			"weekday": "金",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"蜘蛛ですが なにか": {
 			"start_time": "21:30",
 			"weekday": "金",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"俺だけ入れる隠しダンジョン": {
 			"start_time": "22:30",
 			"weekday": "日",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"魔術士オーフェンはぐれ旅": {
 			"start_time": "21:00",
 			"weekday": "水",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"裏世界ピクニック": {
 			"start_time": "23:30",
 			"weekday": "月",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"ゲキドル": {
 			"start_time": "21:00",
 			"weekday": "火",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"ゆるキャン": {
 			"start_time": "23:00",
 			"weekday": "木",
-			"station": "AT−X",
-			"is_cs": true
-		},
-		"超電磁ロボ": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"はたらく細胞": {
 			"start_time": "21:00",
 			"weekday": "日",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"はたらく細胞BLACK": {
 			"start_time": "21:30",
 			"weekday": "日",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"怪病医ラムネ": {
 			"start_time": "22:00",
 			"weekday": "日",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"バック アロウ": {
 			"start_time": "21:00",
 			"weekday": "月",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"オルタンシア サーガ": {
 			"start_time": "23:00",
 			"weekday": "月",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"ホリミヤ": {
 			"start_time": "21:30",
 			"weekday": "火",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"転生したらスライムだった件": {
 			"start_time": "21:30",
 			"weekday": "水",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"八十亀ちゃんかんさつにっき": {
 			"start_time": "23:05",
 			"weekday": "水",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"おとなの防具屋さん": {
 			"start_time": "23:20",
 			"weekday": "水",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"闇芝居": {
 			"start_time": "23:25",
 			"weekday": "水",
-			"station": "AT−X",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"回復術士のやり直し 完全": {
+			"start_time": "4:0",
+			"weekday": "木",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"回復術士のやり直し": {
 			"start_time": "23:30",
 			"weekday": "水",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"のんのんびより のんすとっぷ": {
 			"start_time": "21:30",
 			"weekday": "木",
-			"station": "AT−X",
-			"is_cs": true
-		},
-		"超電磁マシーン": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "AT−X",
-			"is_cs": true
-		},
-		"闘将ダイモス": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"恋は雨上がりのように": {
 			"start_time": "21:30",
 			"weekday": "土",
-			"station": "AT−X",
-			"is_cs": true
-		},
-		"劇場版総集編 メイドインアビス": {
-			"start_time": "",
-			"weekday": "",
-			"station": "AT−X",
-			"is_cs": true
-		},
-		"生徒会役員共": {
-			"start_time": "",
-			"weekday": "",
-			"station": "AT−X",
-			"is_cs": true
-		},
-		"マルドゥック スクランブル ": {
-			"start_time": "",
-			"weekday": "",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"神のみぞ知るセカイ": {
 			"start_time": "19:30",
 			"weekday": "",
-			"station": "AT−X",
+			"station": "AT-X",
 			"is_cs": true
 		},
 		"IDOLY PRIDE": {
@@ -296,18 +272,6 @@
 		},
 		"ドラゴンクエスト ダイの大冒険 1991": {
 			"start_time": "12:00",
-			"weekday": "",
-			"station": "アニマックス",
-			"is_cs": true
-		},
-		"ドラゴンクエスト ダイの大冒険 アバンの使徒": {
-			"start_time": "",
-			"weekday": "",
-			"station": "アニマックス",
-			"is_cs": true
-		},
-		"ドラゴンクエスト ダイの大冒険 新生6大将軍": {
-			"start_time": "",
 			"weekday": "",
 			"station": "アニマックス",
 			"is_cs": true
@@ -325,9 +289,9 @@
 			"is_cs": true
 		},
 		"つぐもも": {
-			"start_time": "24:30",
-			"weekday": "土",
-			"station": "AT−X",
+			"start_time": "00:30",
+			"weekday": "日",
+			"station": "AT-X",
 			"is_cs": true
 		}
 	}
