@@ -90,12 +90,14 @@ func confirmTitle(src, dst string) bool {
 }
 
 func isIgnoredTitle(src, dst string) bool {
-	s := strings.ReplaceAll(strings.ToLower(src), "　", " ")
-	d := strings.ReplaceAll(strings.ToLower(dst), "　", " ")
-	md := strings.Split(d, " ")
-	for _, v := range md {
-		if strings.Contains(s, v) {
-			return true
+	if dst != "" {
+		s := strings.ReplaceAll(strings.ToLower(src), "　", " ")
+		d := strings.ReplaceAll(strings.ToLower(dst), "　", " ")
+		md := strings.Split(d, " ")
+		for _, v := range md {
+			if strings.Contains(s, v) {
+				return true
+			}
 		}
 	}
 	return false
@@ -184,9 +186,14 @@ func Reserve(dp *p.DynamicParam) {
 		} else {
 			OutputIepg(s_conf.TempFileName, v)
 			exe, err := os.Executable()
+			if err != nil {
+				log.L.Error(err)
+			}
 			err = exec.Command(s_conf.PlumagePath, filepath.Dir(exe)+"\\"+s_conf.TempFileName).Run()
-			log.L.Error(err)
-			log.L.Error(v.Title + "予約しました")
+			if err != nil {
+				log.L.Error(err)
+			}
+			log.L.Info(v.Title + "予約しました")
 			//break
 		}
 	}
