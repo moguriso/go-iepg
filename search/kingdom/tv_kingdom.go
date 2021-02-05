@@ -1,4 +1,4 @@
-package yahoo
+package kingdom
 
 import (
 	"fmt"
@@ -7,19 +7,17 @@ import (
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
-	aw "github.com/moguriso/agouti_wrapper"
-
-	"go-iepg/log"
 	p "go-iepg/param"
+
+	aw "github.com/moguriso/agouti_wrapper"
+	"go-iepg/log"
 	"golang.org/x/text/unicode/norm"
 	"time"
 )
 
-const YAHOO_ENDPOINT = "https://tv.yahoo.co.jp/search?q="
+const KINGDOM_ENDPOINT = "https://www.tvkingdom.jp/schedulesBySearch.action?condition.genres[0].parentId=-1&condition.genres[0].childId=-1&stationPlatformId=4&submit=検索&condition.keyword="
 
-const APPEND_QUERY = "&g=&d=&ob=&oc=&dts=0&dte=0&a=23&t="
-
-func Search(target string, ch string) *goquery.Document {
+func Search(target string) *goquery.Document {
 	title := strings.ReplaceAll(target, "%20", " ")
 	title = strings.ReplaceAll(title, " ", "%20")
 
@@ -35,8 +33,9 @@ func Search(target string, ch string) *goquery.Document {
 		log.L.Fatal("Search: ", err)
 		return nil
 	}
-	log.L.Info("uri = ", YAHOO_ENDPOINT+title+APPEND_QUERY+ch)
-	page.Navigate(YAHOO_ENDPOINT + title + APPEND_QUERY + ch)
+	log.L.Info("uri = ", KINGDOM_ENDPOINT+title)
+
+	page.Navigate(KINGDOM_ENDPOINT + title)
 	time.Sleep(500 * time.Millisecond)
 
 	ht, _ := page.HTML()
@@ -50,8 +49,8 @@ func Search(target string, ch string) *goquery.Document {
 }
 
 func ParseSection(doc *goquery.Document, isCs bool, isRecReAir bool) []*p.ReadData {
-	selection := doc.Find("#__next > div > main > div.inner > article > div.innerMain > section > ul")
-	innserSelection := selection.Find("li.programListItem")
+	selection := doc.Find("div.contBlockNB")
+	innserSelection := selection.Find("div")
 
 	var ret []*p.ReadData
 	innserSelection.Each(func(_ int, s *goquery.Selection) {
@@ -68,8 +67,13 @@ func ParseSection(doc *goquery.Document, isCs bool, isRecReAir bool) []*p.ReadDa
 			Re:      false,
 			IsCs:    false,
 		}
-		ht, _ := s.Html()
-		log.L.Info("selection: ", ht)
+		ht := s.Text()
+		ht = strings.ReplaceAll(ht, "\n", "")
+		ht = strings.ReplaceAll(ht, " ", "")
+		//log.L.Info("selection(text): ", ht)
+		if ht == "" || strings.Contains(ht, "件中") || strings.Contains(ht, "googletag.cmd.push") || strings.Contains(ht, "条件に該当する番組はありません") {
+			return
+		}
 		wd := parseWeekDay(s)
 		if wd == "" {
 			log.L.Error("weekday is not available")
@@ -104,10 +108,10 @@ func ParseSection(doc *goquery.Document, isCs bool, isRecReAir bool) []*p.ReadDa
 			return
 		}
 		res.Title = title
-		re := parseRe(s)
-		if strings.Contains(re, "再") && !isRecReAir {
-			res.Re = true
-		}
+		//re := parseRe(s)
+		//if strings.Contains(re, "再") && !isRecReAir {
+		//	res.Re = true
+		//}
 		if isCs {
 			res.IsCs = true
 		}
@@ -130,22 +134,14 @@ func getDate(in string) (string, string, string) {
 		return fmt.Sprintf("%02d", month), fmt.Sprintf("%02d", date), fmt.Sprintf(" %d月%d日", month, date)
 	}
 }
-
 func parseDate(doc *goquery.Selection) (string, string, string) {
 	d := ""
-	count := 0
-	tm := doc.Find("div.schedule")
-	tm = tm.Find("time.scheduleText")
-	tm.Find("span").Each(func(_ int, s *goquery.Selection) {
-		ds := s.Text()
-		count++
-		log.L.Info("date(", count, ") = ", ds)
-		if strings.Contains(ds, "/") {
-			d = ds
-		}
+	doc.Find("p.utileListProperty").Each(func(_ int, s *goquery.Selection) {
+		d = s.Text()
 	})
-
-	month, date, sub_date := getDate(d)
+	md := strings.Split(d, " ")
+	dd := strings.ReplaceAll(md[0], "\n", " ")
+	month, date, sub_date := getDate(dd)
 	if (month == "") || (date == "") {
 		return "", "", ""
 	}
@@ -155,11 +151,17 @@ func parseDate(doc *goquery.Selection) (string, string, string) {
 
 func parseWeekDay(doc *goquery.Selection) string {
 	d := ""
-	doc.Find("span.scheduleTextWeek").Each(func(_ int, s *goquery.Selection) {
+	doc.Find("p.utileListProperty").Each(func(_ int, s *goquery.Selection) {
 		d = s.Text()
 	})
-	log.L.Info("week day = ", d)
-	return d
+	log.L.Info("d = ", d)
+	st := strings.Index(d, "(")
+	end := strings.Index(d, ")")
+	log.L.Info("st = ", st)
+	log.L.Info("end = ", end)
+	st += 1
+	log.L.Info("week day = ", d[st:end])
+	return d[st:end]
 }
 
 func getTime(in string) (string, string) {
@@ -180,44 +182,36 @@ func getTime(in string) (string, string) {
 
 func parseTime(doc *goquery.Selection) (string, string) {
 	d := ""
-	count := 0
-	tm := doc.Find("div.schedule")
-	tm = tm.Find("time.scheduleText")
-	tm.Find("span").Each(func(_ int, s *goquery.Selection) {
-		ds := s.Text()
-		count++
-		log.L.Info("date(", count, ") = ", ds)
-		if strings.Contains(ds, ":") && !s.HasClass("scheduleTextTimeEnd") {
-			d = ds
-		}
+	doc.Find("p.utileListProperty").Each(func(_ int, s *goquery.Selection) {
+		d = s.Text()
 	})
-	start_time := d
-
-	end_time := ""
-	doc.Find("span.scheduleTextTimeEnd").Each(func(_ int, s *goquery.Selection) {
-		end_time = s.Text()
-	})
+	md := strings.Split(d, " ")
+	start_time := strings.ReplaceAll(md[2], "\n", " ")
+	end_time := strings.ReplaceAll(md[4], "\n", " ")
 	log.L.Info("start/end: ", start_time, "～", end_time)
-	//return start_time, end_time
 	return getTime(start_time + "～" + end_time)
 }
 
 func parseStation(doc *goquery.Selection) string {
-	station := ""
-	doc.Find("p.channelText").Each(func(_ int, s *goquery.Selection) {
-		station = s.Text()
+	d := ""
+	doc.Find("p.utileListProperty").Each(func(_ int, s *goquery.Selection) {
+		d = s.Text()
 	})
+	md := strings.Split(d, " ")
+	station := strings.ReplaceAll(md[26], "\n", " ")
 	log.L.Info("station = ", station)
 	return station
 }
 
 func parseTitle(doc *goquery.Selection) string {
-	title := ""
-	doc.Find("a.programListItemTitleLink").Each(func(_ int, s *goquery.Selection) {
-		title = s.Text()
+	d := ""
+	doc.Find("h2").Each(func(_ int, s *goquery.Selection) {
+		d = s.Text()
 	})
+	title := d
 	title = strings.ReplaceAll(title, "　", " ")
 	title = strings.ReplaceAll(title, "＃", "#")
+	title = strings.ReplaceAll(title, "♯", "#")
 	s := title
 	s = string(norm.NFKC.Bytes([]byte(s)))
 	log.L.Info(s)

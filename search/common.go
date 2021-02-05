@@ -2,9 +2,9 @@ package search
 
 import (
 	"github.com/PuerkitoBio/goquery"
-	"go-iepg/kingdom"
 	p "go-iepg/param"
-	"go-iepg/yahoo"
+	"go-iepg/search/kingdom"
+	"go-iepg/search/yahoo"
 )
 
 func Search(target string, ch p.CHANNEL_MODE) *goquery.Document {
