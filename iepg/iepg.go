@@ -232,15 +232,17 @@ func OutputIepg(fileName string, in *p.ReadData) {
 
 func convertStation(in string) string {
 	//if strings.Contains(in, "TOKYO　MX") {
-	if strings.Contains(in, "東京メトロポリタンテレビジョン") {
-		return "TOKYO MX"
+	if strings.Contains(in, "TOKYO\u3000MX1") {
+		return "TOKYO MX1"
+	} else if strings.Contains(in, "TOKYO\u3000MX2") {
+		return "TOKYO MX2"
 	} else if strings.Contains(in, "東京放送") || strings.Contains(in, "ＴＢＳ") || strings.Contains(in, "TBS") {
 		return "ＴＢＳテレビ"
 	} else if strings.Contains(in, "テレビ東京") {
 		return "テレビ東京"
-	} else if strings.Contains(in, "フジテレビジョン") {
+	} else if strings.Contains(in, "フジテレビ") {
 		return "フジテレビ"
-	} else if strings.Contains(in, "日本テレビ放送網") {
+	} else if strings.Contains(in, "日本テレビ放送網") || strings.Contains(in, "日テレ") {
 		return "日本テレビ"
 	} else if strings.Contains(in, "テレビ朝日") {
 		return "テレビ朝日"
