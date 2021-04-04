@@ -1,15 +1,21 @@
 {
 	"reserve_info": {
-		"アキハバラ電脳組 2011年の夏休み": {
-			"start_time": "15:00",
-			"weekday": "土",
-			"station": "AT-X",
+		"魔法騎士レイアース": {
+			"start_time": "20:00",
+			"weekday": "",
+			"station": "",
 			"is_cs": true
 		},
-		"アキハバラ電脳組": {
-			"start_time": "12:30",
+		"怪物事変": {
+			"start_time": "11:00",
+			"weekday": "火",
+			"station": "",
+			"is_cs": true
+		},
+		"プロジェクトX": {
+			"start_time": "",
 			"weekday": "",
-			"station": "AT-X",
+			"station": "",
 			"is_cs": true
 		},
 		"交響詩篇エウレカセブン ハイエボリューション": {
@@ -18,19 +24,7 @@
 			"station": "AT-X",
 			"is_cs": true
 		},
-		"交響詩篇エウレカセブン ポケットが虹でいっぱい": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "AT-X",
-			"is_cs": true
-		},
 		"ワールドウィッチーズ発進しますっ": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"エウレカセブンAO": {
 			"start_time": ":",
 			"weekday": "",
 			"station": "AT-X",
@@ -54,21 +48,9 @@
 			"station": "AT-X",
 			"is_cs": true
 		},
-		"土下座で頼んでみた": {
-			"start_time": "4:00",
-			"weekday": "火",
-			"station": "AT-X",
-			"is_cs": true
-		},
 		"おそ松さん": {
 			"start_time": "21:00",
 			"weekday": "木",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"地球防衛企業 ダイ ガード": {
-			"start_time": "8:30",
-			"weekday": "火",
 			"station": "AT-X",
 			"is_cs": true
 		},
@@ -84,30 +66,6 @@
 			"station": "AT-X",
 			"is_cs": true
 		},
-		"絶園のテンペスト": {
-			"start_time": "20:00",
-			"weekday": "月",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"僕らはみんな河合荘": {
-			"start_time": "21:00",
-			"weekday": "土",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"revisions": {
-			"start_time": "23:00",
-			"weekday": "日",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"虫籠のカガステル": {
-			"start_time": "20:00",
-			"weekday": "金",
-			"station": "AT-X",
-			"is_cs": true
-		},
 		"WHITE ALBUM": {
 			"start_time": "20:30",
 			"weekday": "火",
@@ -120,33 +78,9 @@
 			"station": "AT-X",
 			"is_cs": true
 		},
-		"たとえばラストダンジョン前の村の少年が序盤の街で暮らすような物語": {
-			"start_time": "22:00",
-			"weekday": "月",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"天地創造デザイン部": {
-			"start_time": "23:30",
-			"weekday": "木",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"弱キャラ友崎くん": {
-			"start_time": "21:00",
-			"weekday": "金",
-			"station": "AT-X",
-			"is_cs": true
-		},
 		"蜘蛛ですが なにか": {
 			"start_time": "21:30",
 			"weekday": "金",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"俺だけ入れる隠しダンジョン": {
-			"start_time": "22:30",
-			"weekday": "日",
 			"station": "AT-X",
 			"is_cs": true
 		},
@@ -156,57 +90,9 @@
 			"station": "AT-X",
 			"is_cs": true
 		},
-		"裏世界ピクニック": {
-			"start_time": "23:30",
-			"weekday": "月",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"ゲキドル": {
-			"start_time": "21:00",
-			"weekday": "火",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"ゆるキャン": {
-			"start_time": "23:00",
-			"weekday": "木",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"はたらく細胞": {
-			"start_time": "21:00",
-			"weekday": "日",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"はたらく細胞BLACK": {
-			"start_time": "21:30",
-			"weekday": "日",
-			"station": "AT-X",
-			"is_cs": true
-		},
 		"怪病医ラムネ": {
 			"start_time": "22:00",
 			"weekday": "日",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"バック アロウ": {
-			"start_time": "21:00",
-			"weekday": "月",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"オルタンシア サーガ": {
-			"start_time": "23:00",
-			"weekday": "月",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"ホリミヤ": {
-			"start_time": "21:30",
-			"weekday": "火",
 			"station": "AT-X",
 			"is_cs": true
 		},
@@ -216,20 +102,8 @@
 			"station": "AT-X",
 			"is_cs": true
 		},
-		"八十亀ちゃんかんさつにっき": {
-			"start_time": "23:05",
-			"weekday": "水",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"おとなの防具屋さん": {
-			"start_time": "23:20",
-			"weekday": "水",
-			"station": "AT-X",
-			"is_cs": true
-		},
 		"闇芝居": {
-			"start_time": "23:25",
+			"start_time": "21:25",
 			"weekday": "水",
 			"station": "AT-X",
 			"is_cs": true
@@ -246,49 +120,187 @@
 			"station": "AT-X",
 			"is_cs": true
 		},
-		"のんのんびより のんすとっぷ": {
-			"start_time": "21:30",
-			"weekday": "木",
-			"station": "AT-X",
-			"is_cs": true
-		},
 		"恋は雨上がりのように": {
 			"start_time": "21:30",
 			"weekday": "土",
 			"station": "AT-X",
 			"is_cs": true
 		},
-		"神のみぞ知るセカイ": {
-			"start_time": "19:30",
+		"SHAMAN KING": {
+			"start_time": "20:30",
+			"weekday": "金",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"さくら荘のペットな彼女": {
+			"start_time": "",
 			"weekday": "",
 			"station": "AT-X",
 			"is_cs": true
 		},
-		"IDOLY PRIDE": {
-			"start_time": "23:30",
+		"戦闘員 派遣します": {
+			"start_time": "21:00",
 			"weekday": "日",
-			"station": "アニマックス",
+			"station": "AT-X",
 			"is_cs": true
 		},
-		"ドラゴンクエスト ダイの大冒険 1991": {
-			"start_time": "12:00",
-			"weekday": "",
-			"station": "アニマックス",
+		"灼熱カバディ": {
+			"start_time": "22:30",
+			"weekday": "日",
+			"station": "AT-X",
 			"is_cs": true
 		},
-		"PSYCHO-PASS Sinners of the System": {
-			"start_time": "",
-			"weekday": "",
-			"station": "アニマックス",
+		"恋と呼ぶには気持ち悪い": {
+			"start_time": "22:00",
+			"weekday": "月",
+			"station": "AT-X",
 			"is_cs": true
 		},
-		"PSYCHO-PASS FIRST INSPECTOR": {
-			"start_time": "",
-			"weekday": "",
-			"station": "アニマックス",
+		"ひげを剃る そして女子高生を拾う": {
+			"start_time": "22:30",
+			"weekday": "月",
+			"station": "AT-X",
 			"is_cs": true
 		},
-		"つぐもも": {
+		"Vivy Fluorite Song": {
+			"start_time": "23:00",
+			"weekday": "月",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"さよなら私のクラマー": {
+			"start_time": "21:00",
+			"weekday": "火",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"聖女の魔力は万能です": {
+			"start_time": "23:30",
+			"weekday": "火",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"究極進化したフルダイブ が現実よりもクソゲーだったら": {
+			"start_time": "22:30",
+			"weekday": "水",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"スーパーカブ": {
+			"start_time": "23:00",
+			"weekday": "水",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"ましろのおと": {
+			"start_time": "21:30",
+			"weekday": "木",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"セブンナイツ レボリューション": {
+			"start_time": "22:30",
+			"weekday": "木",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"ゾンビランドサガ リベンジ": {
+			"start_time": "23:30",
+			"weekday": "木",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"フルーツバスケット The Final": {
+			"start_time": "21:00",
+			"weekday": "金",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"スライム倒して300年 知らないうちにレベルMAXになってました": {
+			"start_time": "21:00",
+			"weekday": "土",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"８６ エイティシックス": {
+			"start_time": "21:30",
+			"weekday": "日",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"イジらないで 長瀞さん": {
+			"start_time": "22:00",
+			"weekday": "日",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"東京リベンジャーズ": {
+			"start_time": "21:30",
+			"weekday": "月",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"憂国のモリアーティ": {
+			"start_time": "23:30",
+			"weekday": "月",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"シャドーハウス": {
+			"start_time": "21:30",
+			"weekday": "火",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"BLUE REFLECTION RAY": {
+			"start_time": "23:00",
+			"weekday": "火",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"幼なじみが絶対に負けないラブコメ": {
+			"start_time": "21:00",
+			"weekday": "水",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"美少年探偵団": {
+			"start_time": "21:00",
+			"weekday": "木",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"結城友奈は勇者である ちゅるっと": {
+			"start_time": "22:00",
+			"weekday": "木",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"ガリレイドンナ": {
+			"start_time": "21:30",
+			"weekday": "土",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"やくならマグカップも": {
+			"start_time": "20:00",
+			"weekday": "月",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"土下座で頼んでみた": {
+			"start_time": "22:23",
+			"weekday": "木",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"バック・アロウ": {
+			"start_time": "21:00",
+			"weekday": "月",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"継つぐもも": {
 			"start_time": "00:30",
 			"weekday": "日",
 			"station": "AT-X",

@@ -1,85 +1,12 @@
 {
 	"reserve_info": {
-		"弱キャラ友崎くん": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false,
-			"is_rec_re_air": false
-		},
-		"真 中華一番": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"装甲娘戦機": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"たとえばラストダンジョン前の村の少年が序盤の街で暮らすような物語": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"天空侵犯": {
-			"start_time": ":",
+		"蜘蛛ですが なにか": {
+			"start_time": "",
 			"weekday": "",
 			"station": "",
 			"is_cs": false
 		},
 		"転生したらスライムだった件": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"天地創造デザイン部": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"Dr.STONE": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"のんのんびより のんすとっぷ": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"はたらく細胞": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"バック アロウ": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"BEASTARS": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"プレイタの傷": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"魔術士オーフェンはぐれ旅": {
 			"start_time": ":",
 			"weekday": "",
 			"station": "",
@@ -91,31 +18,7 @@
 			"station": "",
 			"is_cs": false
 		},
-		"約束のネバーランド": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"ゆるキャン": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"Re:ゼロから始める異世界生活": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
 		"ワールドトリガー": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"ワールドウィッチーズ発進しますっ": {
 			"start_time": ":",
 			"weekday": "",
 			"station": "",
@@ -127,18 +30,6 @@
 			"station": "",
 			"is_cs": false
 		},
-		"相棒": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"呪術廻戦": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
 		"ドラゴンクエスト ダイの大冒険": {
 			"start_time": "",
 			"weekday": "",
@@ -146,18 +37,6 @@
 			"is_cs": false
 		},
 		"半妖の夜叉姫": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"おそ松さん": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"ひぐらしのなく頃に": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
@@ -193,13 +72,6 @@
 			"station": "",
 			"is_cs": false
 		},
-		"ブラッククローバー": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false,
-			"is_rec_re_air": false
-		},
 		"もう笑点": {
 			"start_time": "",
 			"weekday": "",
@@ -212,6 +84,66 @@
 			"station": "",
 			"is_cs": false
 		},
+		"僕のヒーローアカデミア": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"SSSS.DYNAZENON": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"ドラゴン 家を買う": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"メガロボクス": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"MARS RED": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"異世界魔王と召喚少女の奴隷魔術": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"すばらしきこのせかい": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"EDENS ZERO": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"バトルアスリーテス大運動会": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"不滅のあなたへ": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
 		"世界一受けたい授業": {
 			"start_time": "",
 			"weekday": "",
@@ -219,18 +151,6 @@
 			"is_cs": false,
 			"ignore": "傑作選",
 			"is_rec_re_air": false
-		},
-		"ホリミヤ": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"文豪ストレイドッグス": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
 		}
 	}
 }
