@@ -23,7 +23,7 @@ func main() {
 	fmt.Println("file = ", *reserveFile)
 	d_conf := param.LoadDynamicParam(*reserveFile)
 	for _, v := range d_conf {
-		iepg.Reserve(v)
+		iepg.Reserve(v, false)
 		time.Sleep(2 * time.Second)
 	}
 }

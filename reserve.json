@@ -1,17 +1,5 @@
 {
 	"reserve_info": {
-		"蜘蛛ですが なにか": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"転生したらスライムだった件": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
 		"無職転生": {
 			"start_time": ":",
 			"weekday": "",
@@ -90,19 +78,7 @@
 			"station": "",
 			"is_cs": false
 		},
-		"SSSS.DYNAZENON": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
 		"ドラゴン 家を買う": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"メガロボクス": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",

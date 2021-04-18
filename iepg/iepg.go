@@ -44,40 +44,6 @@ func getReadData(dp *p.DynamicParam) []*p.ReadData {
 	return r
 }
 
-func PrintReserve(dp *p.DynamicParam) {
-	r := getReadData(dp)
-	for _, v := range r {
-		if !confirmTitle(v.Title, dp.Title) {
-			log.L.Error("failed to reserve [ " + v.Title + "]")
-			log.L.Error("title unmatch src[" + v.Title + "]  [" + dp.Title + "]")
-		} else if !confirmStartTime(v.Start_h, v.Start_m, dp.Start_time) {
-			log.L.Error("failed to reserve [ " + v.Title + "]")
-			log.L.Error("start time unmatch src[" + fmt.Sprintf("%02d:%02d", v.Start_h, v.Start_m) + "]  [" + dp.Start_time + "]")
-		} else if !confirmWeekDay(v.WeekDay, dp.WeekDay) {
-			log.L.Error("failed to reserve [ " + v.Title + "]")
-			log.L.Error("weekday unmatch src[" + v.WeekDay + "]  [" + dp.WeekDay + "]")
-		} else if v.Re {
-			log.L.Error("failed to reserve [ " + v.Title + "]")
-			log.L.Error("再放送番組は録画しません") /* TODO: if need reserve ... */
-		} else {
-			fmt.Println("Content-type: application/x-tv-program-info; charset=shift_jis")
-			fmt.Println("version: 1")
-			fmt.Println("station: " + convertStation(v.Station))
-			mon := int(time.Now().Month())
-			if (mon == 12) && (v.Month < mon) {
-				fmt.Println("year: " + fmt.Sprintf("%04d", time.Now().Year()+1))
-			} else {
-				fmt.Println("year: " + fmt.Sprintf("%04d", time.Now().Year()))
-			}
-			fmt.Println("month: " + fmt.Sprintf("%02d", v.Month))
-			fmt.Println("date: " + fmt.Sprintf("%02d", v.Date))
-			fmt.Println("start: " + fmt.Sprintf("%02d:%02d", v.Start_h, v.Start_m))
-			fmt.Println("end: " + fmt.Sprintf("%02d:%02d", v.End_h, v.End_m))
-			fmt.Println("program-title: " + v.Title + fmt.Sprintf(" %d月%d日", v.Month, v.Date))
-		}
-	}
-}
-
 func confirmTitle(src, dst string) bool {
 	s := strings.ReplaceAll(strings.ToLower(src), "　", " ")
 	d := strings.ReplaceAll(strings.ToLower(dst), "　", " ")
@@ -159,7 +125,7 @@ func confirmWeekDay(src, dst string) bool {
 	return false
 }
 
-func Reserve(dp *p.DynamicParam) {
+func Reserve(dp *p.DynamicParam, isLinux bool) {
 	s_conf := p.LoadStaticParam("config.json")
 	r := getReadData(dp)
 	for _, v := range r {
@@ -185,17 +151,34 @@ func Reserve(dp *p.DynamicParam) {
 			log.L.Error("failed to reserve [ " + v.Title + "]")
 			log.L.Error("再放送番組は録画しません") /* TODO: if need reserve ... */
 		} else {
-			OutputIepg(s_conf.TempFileName, v)
-			exe, err := os.Executable()
-			if err != nil {
-				log.L.Error(err)
+			if isLinux {
+				fmt.Println("Content-type: application/x-tv-program-info; charset=shift_jis")
+				fmt.Println("version: 1")
+				fmt.Println("station: " + convertStation(v.Station))
+				mon := int(time.Now().Month())
+				if (mon == 12) && (v.Month < mon) {
+					fmt.Println("year: " + fmt.Sprintf("%04d", time.Now().Year()+1))
+				} else {
+					fmt.Println("year: " + fmt.Sprintf("%04d", time.Now().Year()))
+				}
+				fmt.Println("month: " + fmt.Sprintf("%02d", v.Month))
+				fmt.Println("date: " + fmt.Sprintf("%02d", v.Date))
+				fmt.Println("start: " + fmt.Sprintf("%02d:%02d", v.Start_h, v.Start_m))
+				fmt.Println("end: " + fmt.Sprintf("%02d:%02d", v.End_h, v.End_m))
+				fmt.Println("program-title: " + v.Title + fmt.Sprintf(" %d月%d日", v.Month, v.Date))
+			} else {
+				OutputIepg(s_conf.TempFileName, v)
+				exe, err := os.Executable()
+				if err != nil {
+					log.L.Error(err)
+				}
+				err = exec.Command(s_conf.PlumagePath, filepath.Dir(exe)+"\\"+s_conf.TempFileName).Run()
+				if err != nil {
+					log.L.Error(err)
+				}
+				log.L.Info(v.Title + "予約しました")
+				//break
 			}
-			err = exec.Command(s_conf.PlumagePath, filepath.Dir(exe)+"\\"+s_conf.TempFileName).Run()
-			if err != nil {
-				log.L.Error(err)
-			}
-			log.L.Info(v.Title + "予約しました")
-			//break
 		}
 	}
 }
