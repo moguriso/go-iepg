@@ -50,7 +50,7 @@ func Search(target string) *goquery.Document {
 
 func ParseSection(doc *goquery.Document, isCs bool, isRecReAir bool) []*p.ReadData {
 	selection := doc.Find("div.contBlockNB")
-	innserSelection := selection.Find("div")
+	innserSelection := selection.Find("div.utileList")
 
 	var ret []*p.ReadData
 	innserSelection.Each(func(_ int, s *goquery.Selection) {
