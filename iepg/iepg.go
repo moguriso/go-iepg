@@ -128,6 +128,9 @@ func confirmWeekDay(src, dst string) bool {
 func Reserve(dp *p.DynamicParam, isLinux bool) {
 	s_conf := p.LoadStaticParam("config.json")
 	r := getReadData(dp)
+	if len(r) == 0 {
+		log.L.Error("read data failed.")
+	}
 	for _, v := range r {
 		if !confirmTitle(v.Title, dp.Title) {
 			log.L.Error("failed to reserve [ " + v.Title + "]")
