@@ -17,6 +17,8 @@ import (
 
 const KINGDOM_ENDPOINT = "https://www.tvkingdom.jp/schedulesBySearch.action?condition.genres[0].parentId=-1&condition.genres[0].childId=-1&stationPlatformId=4&submit=検索&condition.keyword="
 
+const GET_RETRY_COUNT int = 15
+
 func Search(target string) *goquery.Document {
 	title := strings.ReplaceAll(target, "%20", " ")
 	title = strings.ReplaceAll(title, " ", "%20")
@@ -35,9 +37,24 @@ func Search(target string) *goquery.Document {
 	}
 	log.L.Info("uri = ", KINGDOM_ENDPOINT+title)
 
-	page.Navigate(KINGDOM_ENDPOINT + title)
-	time.Sleep(500 * time.Millisecond)
-
+	retry := 0
+	for retry < GET_RETRY_COUNT {
+		page.Navigate(KINGDOM_ENDPOINT + title)
+		time.Sleep(500 * time.Millisecond)
+		ht, _ := page.HTML()
+		if strings.Contains(ht, "403 Forbidden") {
+			retry++
+			log.L.Error("html get error.")
+			log.L.Println(ht)
+			wt := 30 * retry
+			if wt > 120 {
+				wt = 120
+			}
+			time.Sleep(time.Duration(wt) * time.Second)
+			continue
+		}
+		break
+	}
 	ht, _ := page.HTML()
 	red := strings.NewReader(ht)
 	doc, err := goquery.NewDocumentFromReader(red)
