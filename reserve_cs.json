@@ -1,5 +1,29 @@
 {
 	"reserve_info": {
+		"Strawberry Panic": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": true
+		},
+		"アリスインデッドリースクール": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": true
+		},
+		"SSSS.DYNAZENON": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"メガロボクス": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
 		"魔法騎士レイアース": {
 			"start_time": "20:00",
 			"weekday": "",
@@ -12,32 +36,8 @@
 			"station": "",
 			"is_cs": true
 		},
-		"プロジェクトX": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": true
-		},
-		"交響詩篇エウレカセブン ハイエボリューション": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"ワールドウィッチーズ発進しますっ": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "AT-X",
-			"is_cs": true
-		},
 		"空挺ドラゴンズ": {
-			"start_time": "23:00",
-			"weekday": "日",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"ひぐらしのなく頃に": {
-			"start_time": "22:00",
+			"start_time": "5:00",
 			"weekday": "金",
 			"station": "AT-X",
 			"is_cs": true
@@ -48,23 +48,11 @@
 			"station": "AT-X",
 			"is_cs": true
 		},
-		"おそ松さん": {
-			"start_time": "21:00",
-			"weekday": "木",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"BORUTO": {
+		"ボルト NARUTO NEXT GENERATIONS": {
 			"start_time": "17:30",
 			"weekday": "",
 			"station": "テレビ東京",
 			"is_cs": false
-		},
-		"ゼロから始める異世界生活": {
-			"start_time": "22:30",
-			"weekday": "水",
-			"station": "AT-X",
-			"is_cs": true
 		},
 		"WHITE ALBUM": {
 			"start_time": "20:30",
@@ -84,18 +72,6 @@
 			"station": "AT-X",
 			"is_cs": true
 		},
-		"魔術士オーフェンはぐれ旅": {
-			"start_time": "21:00",
-			"weekday": "水",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"怪病医ラムネ": {
-			"start_time": "22:00",
-			"weekday": "日",
-			"station": "AT-X",
-			"is_cs": true
-		},
 		"転生したらスライムだった件": {
 			"start_time": "21:30",
 			"weekday": "水",
@@ -108,33 +84,9 @@
 			"station": "AT-X",
 			"is_cs": true
 		},
-		"回復術士のやり直し 完全": {
-			"start_time": "4:0",
-			"weekday": "木",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"回復術士のやり直し": {
-			"start_time": "23:30",
-			"weekday": "水",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"恋は雨上がりのように": {
-			"start_time": "21:30",
-			"weekday": "土",
-			"station": "AT-X",
-			"is_cs": true
-		},
 		"SHAMAN KING": {
 			"start_time": "20:30",
 			"weekday": "金",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"さくら荘のペットな彼女": {
-			"start_time": "",
-			"weekday": "",
 			"station": "AT-X",
 			"is_cs": true
 		},
@@ -193,8 +145,8 @@
 			"is_cs": true
 		},
 		"ましろのおと": {
-			"start_time": "21:30",
-			"weekday": "木",
+			"start_time": "9:30",
+			"weekday": "月",
 			"station": "AT-X",
 			"is_cs": true
 		},
@@ -265,8 +217,8 @@
 			"is_cs": true
 		},
 		"美少年探偵団": {
-			"start_time": "21:00",
-			"weekday": "木",
+			"start_time": "9:00",
+			"weekday": "月",
 			"station": "AT-X",
 			"is_cs": true
 		},
@@ -303,6 +255,42 @@
 		"継つぐもも": {
 			"start_time": "00:30",
 			"weekday": "日",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"BNA": {
+			"start_time": "5:00",
+			"weekday": "金",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"マルドゥック スクランブル": {
+			"start_time": "",
+			"weekday": "",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"ダンジョンに出会いを求めるのは間違っているだろうか オリオンの矢": {
+			"start_time": "01:00",
+			"weekday": "日",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"文豪ストレイドッグス DEAD APPLE": {
+			"start_time": "00:00",
+			"weekday": "月",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"若おかみは小学生": {
+			"start_time": "19:00",
+			"weekday": "土",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"小林さんちのメイドラゴン": {
+			"start_time": "22:00",
+			"weekday": "火",
 			"station": "AT-X",
 			"is_cs": true
 		}
