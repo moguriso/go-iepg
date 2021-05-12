@@ -20,7 +20,7 @@ func main() {
 	}
 
 	fmt.Println("file = ", *reserveFile)
-	d_conf := param.LoadDynamicParam("reserve.json")
+	d_conf := param.LoadDynamicParam(*reserveFile)
 	for _, v := range d_conf {
 		iepg.Reserve(v, true) /* Linux doesn't support PLUMAGE */
 	}
