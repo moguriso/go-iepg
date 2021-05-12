@@ -184,6 +184,7 @@ func Reserve(dp *p.DynamicParam, isLinux bool) {
 			}
 		}
 	}
+	time.Sleep(2 * time.Second)
 }
 
 func OutputIepg(fileName string, in *p.ReadData) {

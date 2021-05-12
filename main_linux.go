@@ -6,7 +6,6 @@ import (
 	"go-iepg/iepg"
 	"go-iepg/param"
 	"os"
-	"time"
 )
 
 var (
@@ -24,6 +23,5 @@ func main() {
 	d_conf := param.LoadDynamicParam("reserve.json")
 	for _, v := range d_conf {
 		iepg.Reserve(v, true) /* Linux doesn't support PLUMAGE */
-		time.Sleep(2 * time.Second)
 	}
 }
