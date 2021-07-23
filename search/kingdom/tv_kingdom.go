@@ -46,9 +46,9 @@ func Search(target string) *goquery.Document {
 			retry++
 			log.L.Error("html get error.")
 			log.L.Println(ht)
-			wt := 30 * retry
-			if wt > 120 {
-				wt = 120
+			wt := 300 * retry
+			if wt > 600 {
+				wt = 600
 			}
 			time.Sleep(time.Duration(wt) * time.Second)
 			continue
