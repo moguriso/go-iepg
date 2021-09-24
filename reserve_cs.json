@@ -1,43 +1,253 @@
 {
 	"reserve_info": {
-		"Strawberry Panic": {
+		"結城友奈は勇者である": {
 			"start_time": "",
 			"weekday": "",
-			"station": "",
+			"station": "AT-X",
 			"is_cs": true
 		},
-		"アリスインデッドリースクール": {
+		"俺がお嬢様学校に 庶民サンプル としてゲッツされた件": {
 			"start_time": "",
 			"weekday": "",
-			"station": "",
+			"station": "AT-X",
 			"is_cs": true
 		},
-		"SSSS.DYNAZENON": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"メガロボクス": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"魔法騎士レイアース": {
+		"インフィニット ストラトス": {
 			"start_time": "20:00",
+			"weekday": "水",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"トニカクカワイイ": {
+			"start_time": "",
+			"weekday": "",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"生徒会役員共": {
+			"start_time": "",
+			"weekday": "",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"るろうに剣心": {
+			"start_time": "",
+			"weekday": "",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"デート・ア・ライブ": {
+			"start_time": "",
+			"weekday": "",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"交響詩篇エウレカセブン": {
+			"start_time": "",
+			"weekday": "",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"現実主義勇者の王国再建記": {
+			"start_time": "",
 			"weekday": "",
 			"station": "",
+			"is_cs": false
+		},
+		"SCARLET NEXUS": {
+			"start_time": "23:00",
+			"weekday": "木",
+			"station": "AT-X",
 			"is_cs": true
 		},
-		"怪物事変": {
-			"start_time": "11:00",
+		"ピーチボーイリバーサイド": {
+			"start_time": "23:30",
+			"weekday": "木",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"ひぐらしのなく頃に卒": {
+			"start_time": "21:30",
+			"weekday": "金",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"魔法科高校の優等生": {
+			"start_time": "23:30",
+			"weekday": "土",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"かげきしょうじょ": {
+			"start_time": "00:00",
+			"weekday": "日",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"ゲッターロボ アーク": {
+			"start_time": "21:00",
+			"weekday": "日",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"探偵はもう 死んでいる": {
+			"start_time": "21:30",
+			"weekday": "日",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"乙女ゲームの破滅フラグしかない悪役令嬢に転生してしまった": {
+			"start_time": "23:30",
+			"weekday": "日",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"無職転生 異世界行ったら本気だす": {
+			"start_time": "22:00",
+			"weekday": "月",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"精霊幻想記": {
+			"start_time": "22:30",
 			"weekday": "火",
-			"station": "",
+			"station": "AT-X",
 			"is_cs": true
 		},
-		"空挺ドラゴンズ": {
-			"start_time": "5:00",
+		"ジャヒー様はくじけない": {
+			"start_time": "22:00",
+			"weekday": "水",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"GREAT PRETENDER": {
+			"start_time": "23:00",
+			"weekday": "日",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"カノジョも彼女": {
+			"start_time": "22:30",
+			"weekday": "水",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"ぼくたちのリメイク": {
+			"start_time": "23:00",
+			"weekday": "水",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"死神坊ちゃんと黒メイド": {
+			"start_time": "21:30",
+			"weekday": "木",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"チート薬師のスローライフ": {
+			"start_time": "22:30",
+			"weekday": "木",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"月が導く異世界道中": {
+			"start_time": "22:00",
+			"weekday": "金",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"小林さんちのメイドラゴンS": {
+			"start_time": "21:00",
+			"weekday": "土",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"冴えない彼女の育てかた": {
+			"start_time": "21:30",
+			"weekday": "土",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"迷宮ブラックカンパニー": {
+			"start_time": "22:00",
+			"weekday": "日",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"白い砂のアクアトープ": {
+			"start_time": "23:30",
+			"weekday": "月",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"100万の命の上に俺は立っている": {
+			"start_time": "21:00",
+			"weekday": "月",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"D_CIDE TRAUMEREI": {
+			"start_time": "22:00",
+			"weekday": "火",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"出会って5秒でバトル": {
+			"start_time": "23:30",
+			"weekday": "火",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"女神寮の寮母くん": {
+			"start_time": "23:30",
+			"weekday": "水",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"Sonny Boy": {
+			"start_time": "21:00",
+			"weekday": "金",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"STAR DRIVER 輝きのタクト": {
+			"start_time": "21:00",
+			"weekday": "火",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"闇芝居": {
+			"start_time": "22:00",
+			"weekday": "木",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"マギアレコード 魔法少女まどか": {
+			"start_time": "22:30",
+			"weekday": "日",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"オーバーロード": {
+			"start_time": "",
+			"weekday": "",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"この音とまれ": {
+			"start_time": "0:00",
+			"weekday": "",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"うどんの国の金色毛鞠": {
+			"start_time": "20:00",
+			"weekday": "火",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"Strawberry Panic": {
+			"start_time": "23:00",
 			"weekday": "金",
 			"station": "AT-X",
 			"is_cs": true
@@ -54,32 +264,8 @@
 			"station": "テレビ東京",
 			"is_cs": false
 		},
-		"WHITE ALBUM": {
-			"start_time": "20:30",
-			"weekday": "火",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"それゆけ 宇宙戦艦ヤマモト ヨーコ": {
-			"start_time": "22:00",
-			"weekday": "水",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"蜘蛛ですが なにか": {
-			"start_time": "21:30",
-			"weekday": "金",
-			"station": "AT-X",
-			"is_cs": true
-		},
 		"転生したらスライムだった件": {
 			"start_time": "21:30",
-			"weekday": "水",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"闇芝居": {
-			"start_time": "21:25",
 			"weekday": "水",
 			"station": "AT-X",
 			"is_cs": true
@@ -90,99 +276,9 @@
 			"station": "AT-X",
 			"is_cs": true
 		},
-		"戦闘員 派遣します": {
-			"start_time": "21:00",
-			"weekday": "日",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"灼熱カバディ": {
-			"start_time": "22:30",
-			"weekday": "日",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"恋と呼ぶには気持ち悪い": {
-			"start_time": "22:00",
-			"weekday": "月",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"ひげを剃る そして女子高生を拾う": {
-			"start_time": "22:30",
-			"weekday": "月",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"Vivy Fluorite Song": {
-			"start_time": "23:00",
-			"weekday": "月",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"さよなら私のクラマー": {
-			"start_time": "21:00",
-			"weekday": "火",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"聖女の魔力は万能です": {
-			"start_time": "23:30",
-			"weekday": "火",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"究極進化したフルダイブ が現実よりもクソゲーだったら": {
-			"start_time": "22:30",
-			"weekday": "水",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"スーパーカブ": {
-			"start_time": "23:00",
-			"weekday": "水",
-			"station": "AT-X",
-			"is_cs": true
-		},
 		"ましろのおと": {
 			"start_time": "9:30",
 			"weekday": "月",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"セブンナイツ レボリューション": {
-			"start_time": "22:30",
-			"weekday": "木",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"ゾンビランドサガ リベンジ": {
-			"start_time": "23:30",
-			"weekday": "木",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"フルーツバスケット The Final": {
-			"start_time": "21:00",
-			"weekday": "金",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"スライム倒して300年 知らないうちにレベルMAXになってました": {
-			"start_time": "21:00",
-			"weekday": "土",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"８６ エイティシックス": {
-			"start_time": "21:30",
-			"weekday": "日",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"イジらないで 長瀞さん": {
-			"start_time": "22:00",
-			"weekday": "日",
 			"station": "AT-X",
 			"is_cs": true
 		},
@@ -192,104 +288,8 @@
 			"station": "AT-X",
 			"is_cs": true
 		},
-		"憂国のモリアーティ": {
-			"start_time": "23:30",
-			"weekday": "月",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"シャドーハウス": {
-			"start_time": "21:30",
-			"weekday": "火",
-			"station": "AT-X",
-			"is_cs": true
-		},
 		"BLUE REFLECTION RAY": {
 			"start_time": "23:00",
-			"weekday": "火",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"幼なじみが絶対に負けないラブコメ": {
-			"start_time": "21:00",
-			"weekday": "水",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"美少年探偵団": {
-			"start_time": "9:00",
-			"weekday": "月",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"結城友奈は勇者である ちゅるっと": {
-			"start_time": "22:00",
-			"weekday": "木",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"ガリレイドンナ": {
-			"start_time": "21:30",
-			"weekday": "土",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"やくならマグカップも": {
-			"start_time": "20:00",
-			"weekday": "月",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"土下座で頼んでみた": {
-			"start_time": "22:23",
-			"weekday": "木",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"バック・アロウ": {
-			"start_time": "21:00",
-			"weekday": "月",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"継つぐもも": {
-			"start_time": "00:30",
-			"weekday": "日",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"BNA": {
-			"start_time": "5:00",
-			"weekday": "金",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"マルドゥック スクランブル": {
-			"start_time": "",
-			"weekday": "",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"ダンジョンに出会いを求めるのは間違っているだろうか オリオンの矢": {
-			"start_time": "01:00",
-			"weekday": "日",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"文豪ストレイドッグス DEAD APPLE": {
-			"start_time": "00:00",
-			"weekday": "月",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"若おかみは小学生": {
-			"start_time": "19:00",
-			"weekday": "土",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"小林さんちのメイドラゴン": {
-			"start_time": "22:00",
 			"weekday": "火",
 			"station": "AT-X",
 			"is_cs": true

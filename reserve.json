@@ -1,5 +1,29 @@
 {
 	"reserve_info": {
+		"現実主義勇者の王国再建記": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"ぼくたちのリメイク": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"サイバー捜査班": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"ザ・ノンフィクション": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
 		"無職転生": {
 			"start_time": ":",
 			"weekday": "",
@@ -7,12 +31,6 @@
 			"is_cs": false
 		},
 		"ワールドトリガー": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"ワンダーエッグ プライオリティ": {
 			"start_time": ":",
 			"weekday": "",
 			"station": "",
@@ -31,7 +49,7 @@
 			"is_cs": false
 		},
 		"よしもと新喜劇": {
-			"start_time": "13:00",
+			"start_time": "",
 			"weekday": "土",
 			"station": "",
 			"is_cs": false
@@ -78,30 +96,6 @@
 			"station": "",
 			"is_cs": false
 		},
-		"ドラゴン 家を買う": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"MARS RED": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"異世界魔王と召喚少女の奴隷魔術": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"すばらしきこのせかい": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
 		"EDENS ZERO": {
 			"start_time": "",
 			"weekday": "",
@@ -115,6 +109,30 @@
 			"is_cs": false
 		},
 		"不滅のあなたへ": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"ヴァニタスの手記": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"平穏世代の韋駄天達": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"ジャヒー様はくじけない": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"NIGHT HEAD 2041": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
