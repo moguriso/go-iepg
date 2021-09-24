@@ -2,7 +2,6 @@ _main.go
 aaa.bat
 go-iepg
 go-iepg.exe
-go.sum
 test.tvpi
 config.json
 
