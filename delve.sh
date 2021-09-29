@@ -1,1 +1,4 @@
-dlv debug -- -r "reserve_cs.json"
+#!/bin/bash
+
+dlv debug -- -r "reserve_test.json"
+
