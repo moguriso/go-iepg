@@ -4,4 +4,5 @@ go-iepg
 go-iepg.exe
 test.tvpi
 config.json
+chromedriver.exe
 
