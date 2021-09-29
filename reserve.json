@@ -1,18 +1,109 @@
 {
 	"reserve_info": {
+		"ブルーピリオド": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"白い砂のアクアトープ": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"キミとフィットボクシング": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"でーじミーツガール": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"デジモンゴーストゲーム": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"さんかく窓の外側は夜": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"ヴィジュアルプリズン": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"境界戦機": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"プラオレ PRIDE OF ORANGE": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"古見さんは、コミュ症です": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"ignore": "5分ガイド",
+			"is_cs": false
+		},
+		"マブラヴ オルタネイティヴ": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"プラチナエンド": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"ルパン三世 PART6": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"先輩がうざい後輩の話": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"シキザクラ": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"王様ランキング": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"180秒で君の耳を幸せにできるか": {
+			"start_time": ":",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
 		"現実主義勇者の王国再建記": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"ぼくたちのリメイク": {
-			"start_time": ":",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"サイバー捜査班": {
 			"start_time": ":",
 			"weekday": "",
 			"station": "",
@@ -24,7 +115,7 @@
 			"station": "",
 			"is_cs": false
 		},
-		"無職転生": {
+		"無職転生 異世界行ったら本気だす": {
 			"start_time": ":",
 			"weekday": "",
 			"station": "",
@@ -40,9 +131,10 @@
 			"start_time": "",
 			"weekday": "",
 			"station": "",
+			"ignore": "一夜",
 			"is_cs": false
 		},
-		"半妖の夜叉姫": {
+		"半妖の夜叉姫 弐の章": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",
@@ -97,18 +189,6 @@
 			"is_cs": false
 		},
 		"EDENS ZERO": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"バトルアスリーテス大運動会": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
-		},
-		"不滅のあなたへ": {
 			"start_time": "",
 			"weekday": "",
 			"station": "",

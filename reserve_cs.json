@@ -1,38 +1,254 @@
 {
 	"reserve_info": {
-		"結城友奈は勇者である": {
+		"舞妓さんちのまかないさん": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"メガトン級ムサシ": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": false
+		},
+		"幻想三國誌 天元霊心記": {
+			"start_time": "",
+			"weekday": "",
+			"station": "",
+			"is_cs": true
+		},
+		"SELECTION PROJECT": {
+			"start_time": "10:00",
+			"weekday": "火",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"８６ エイティシックス": {
+			"start_time": "21:30",
+			"weekday": "日",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"見える子ちゃん": {
+			"start_time": "22:00",
+			"weekday": "日",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"海賊王女": {
+			"start_time": "23:30",
+			"weekday": "日",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"無職転生 異世界行ったら本気だす": {
+			"start_time": "22:00",
+			"weekday": "月",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"異世界食堂２": {
+			"start_time": "22:30",
+			"weekday": "月",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"やくならマグカップも 二番窯": {
+			"start_time": "21:00",
+			"weekday": "火",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"吸血鬼すぐ死ぬ": {
+			"start_time": "21:30",
+			"weekday": "火",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"月とライカと吸血姫": {
+			"start_time": "21:00",
+			"weekday": "水",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"真の仲間じゃないと勇者のパーティーを追い出されたので、辺境でスローライフすることにしました": {
+			"start_time": "22:30",
+			"weekday": "水",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"世界最高の暗殺者、異世界貴族に転生する": {
+			"start_time": "23:00",
+			"weekday": "水",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"MUTEKING THE Dancing HERO": {
+			"start_time": "23:30",
+			"weekday": "水",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"ブルーピリオド": {
+			"start_time": "21:00",
+			"weekday": "木",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"テスラノート": {
+			"start_time": "21:30",
+			"weekday": "木",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"でーじミーツガール": {
+			"start_time": "22:00",
+			"weekday": "木",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"進化の実 知らないうちに勝ち組人生": {
+			"start_time": "22:30",
+			"weekday": "木",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"サクガン": {
+			"start_time": "23:30",
+			"weekday": "木",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"takt op.Destiny": {
+			"start_time": "21:00",
+			"weekday": "金",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"終末のハーレム": {
+			"start_time": "21:30",
+			"weekday": "金",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"大正オトメ御伽話": {
+			"start_time": "21:00",
+			"weekday": "土",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"冴えない彼女の育てかた♭": {
+			"start_time": "21:30",
+			"weekday": "土",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"最果てのパラディン": {
+			"start_time": "23:30",
+			"weekday": "土",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"ビルディバイド": {
+			"start_time": "21:00",
+			"weekday": "日",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"逆転世界ノ電池少女": {
+			"start_time": "23:00",
+			"weekday": "月",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"ディープインサニティ ザ・ロストチャイルド": {
+			"start_time": "21:30",
+			"weekday": "水",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"かぎなど": {
+			"start_time": "22:16",
+			"weekday": "木",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"鬼滅の刃 無限列車編": {
+			"start_time": "24:00",
+			"weekday": "日",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"プリンセス・プリンシパル": {
 			"start_time": "",
 			"weekday": "",
 			"station": "AT-X",
 			"is_cs": true
 		},
-		"俺がお嬢様学校に 庶民サンプル としてゲッツされた件": {
+		"大図書館の羊飼い": {
 			"start_time": "",
 			"weekday": "",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"CLANNAD": {
+			"start_time": "",
+			"weekday": "",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"アホガール": {
+			"start_time": "",
+			"weekday": "",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"CLANNAD AFTER STORY": {
+			"start_time": "",
+			"weekday": "",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"妖狐×僕SS": {
+			"start_time": "",
+			"weekday": "",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"この素晴らしい世界に祝福を！": {
+			"start_time": "19:30",
+			"weekday": "",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"俺の妹がこんなに可愛いわけがない": {
+			"start_time": "22:00",
+			"weekday": "火",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"境界の彼方": {
+			"start_time": "19:00",
+			"weekday": "",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"響け ユーフォニアム": {
+			"start_time": "19:00",
+			"weekday": "",
+			"station": "AT-X",
+			"is_cs": true
+		},
+		"結城友奈は勇者である": {
+			"start_time": "21:00",
+			"weekday": "月",
 			"station": "AT-X",
 			"is_cs": true
 		},
 		"インフィニット ストラトス": {
 			"start_time": "20:00",
 			"weekday": "水",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"トニカクカワイイ": {
-			"start_time": "",
-			"weekday": "",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"生徒会役員共": {
-			"start_time": "",
-			"weekday": "",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"るろうに剣心": {
-			"start_time": "",
-			"weekday": "",
 			"station": "AT-X",
 			"is_cs": true
 		},
@@ -47,12 +263,6 @@
 			"weekday": "",
 			"station": "AT-X",
 			"is_cs": true
-		},
-		"現実主義勇者の王国再建記": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
 		},
 		"SCARLET NEXUS": {
 			"start_time": "23:00",
@@ -90,27 +300,9 @@
 			"station": "AT-X",
 			"is_cs": true
 		},
-		"探偵はもう 死んでいる": {
-			"start_time": "21:30",
-			"weekday": "日",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"乙女ゲームの破滅フラグしかない悪役令嬢に転生してしまった": {
-			"start_time": "23:30",
-			"weekday": "日",
-			"station": "AT-X",
-			"is_cs": true
-		},
 		"無職転生 異世界行ったら本気だす": {
 			"start_time": "22:00",
 			"weekday": "月",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"精霊幻想記": {
-			"start_time": "22:30",
-			"weekday": "火",
 			"station": "AT-X",
 			"is_cs": true
 		},
@@ -156,12 +348,6 @@
 			"station": "AT-X",
 			"is_cs": true
 		},
-		"小林さんちのメイドラゴンS": {
-			"start_time": "21:00",
-			"weekday": "土",
-			"station": "AT-X",
-			"is_cs": true
-		},
 		"冴えない彼女の育てかた": {
 			"start_time": "21:30",
 			"weekday": "土",
@@ -180,12 +366,6 @@
 			"station": "AT-X",
 			"is_cs": true
 		},
-		"100万の命の上に俺は立っている": {
-			"start_time": "21:00",
-			"weekday": "月",
-			"station": "AT-X",
-			"is_cs": true
-		},
 		"D_CIDE TRAUMEREI": {
 			"start_time": "22:00",
 			"weekday": "火",
@@ -198,27 +378,9 @@
 			"station": "AT-X",
 			"is_cs": true
 		},
-		"女神寮の寮母くん": {
-			"start_time": "23:30",
-			"weekday": "水",
-			"station": "AT-X",
-			"is_cs": true
-		},
 		"Sonny Boy": {
 			"start_time": "21:00",
 			"weekday": "金",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"STAR DRIVER 輝きのタクト": {
-			"start_time": "21:00",
-			"weekday": "火",
-			"station": "AT-X",
-			"is_cs": true
-		},
-		"闇芝居": {
-			"start_time": "22:00",
-			"weekday": "木",
 			"station": "AT-X",
 			"is_cs": true
 		},
