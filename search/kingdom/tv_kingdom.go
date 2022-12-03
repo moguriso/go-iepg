@@ -6,16 +6,18 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/PuerkitoBio/goquery"
 	p "go-iepg/param"
 
-	aw "github.com/moguriso/agouti_wrapper"
+	"github.com/PuerkitoBio/goquery"
+
 	"go-iepg/log"
-	"golang.org/x/text/unicode/norm"
 	"time"
+
+	aw "github.com/moguriso/agouti_wrapper"
+	"golang.org/x/text/unicode/norm"
 )
 
-const KINGDOM_ENDPOINT = "https://www.tvkingdom.jp/schedulesBySearch.action?condition.genres[0].parentId=-1&condition.genres[0].childId=-1&stationPlatformId=4&submit=検索&condition.keyword="
+const KINGDOM_ENDPOINT = "https://www.tvkingdom.jp/schedulesBySearch.action?condition.genres[0].parentId=-1&condition.genres[0].childId=-1&stationPlatformId=0&submit=検索&condition.keyword="
 
 const GET_RETRY_COUNT int = 15
 
