@@ -7,11 +7,11 @@ import (
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
-	aw "github.com/moguriso/agouti_wrapper"
+	"golang.org/x/text/unicode/norm"
 
 	"go-iepg/log"
 	p "go-iepg/param"
-	"golang.org/x/text/unicode/norm"
+	aw "go-iepg/wrapper"
 	"time"
 )
 

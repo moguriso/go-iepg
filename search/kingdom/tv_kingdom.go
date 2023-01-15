@@ -5,15 +5,13 @@ import (
 	"regexp"
 	"strconv"
 	"strings"
-
-	p "go-iepg/param"
-
-	"github.com/PuerkitoBio/goquery"
-
-	"go-iepg/log"
 	"time"
 
-	aw "github.com/moguriso/agouti_wrapper"
+	"go-iepg/log"
+	p "go-iepg/param"
+	aw "go-iepg/wrapper"
+
+	"github.com/PuerkitoBio/goquery"
 	"golang.org/x/text/unicode/norm"
 )
 
@@ -231,6 +229,7 @@ func parseTitle(doc *goquery.Selection) string {
 	title = strings.ReplaceAll(title, "　", " ")
 	title = strings.ReplaceAll(title, "＃", "#")
 	title = strings.ReplaceAll(title, "♯", "#")
+	title = strings.ReplaceAll(title, "−", "-")
 	s := title
 	s = string(norm.NFKC.Bytes([]byte(s)))
 	log.L.Info(s)

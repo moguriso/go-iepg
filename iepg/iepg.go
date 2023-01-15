@@ -212,7 +212,9 @@ func OutputIepg(fileName string, in *p.ReadData) {
 	if in.IsCs {
 		tl += "_cs"
 	}
+	log.L.Info("zzzzzzzz----- title: ", tl)
 	tl += fmt.Sprintf(" %d月%d日", in.Month, in.Date) + "\n"
+	log.L.Info("zzzzzzzz----- title: ", tl)
 	_, err = sjisWriter.WriteString("program-title: " + tl)
 	err = sjisWriter.Flush()
 }

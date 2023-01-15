@@ -1,10 +1,10 @@
 {
 	"reserve_info": {
-		"カンブリア宮殿": {
-			"start_time": "",
-			"weekday": "",
-			"station": "",
-			"is_cs": false
+		"ツルネ つながりの 射": {
+			"start_time": "22:00",
+			"weekday": "金",
+			"station": "AT-X",
+			"is_cs": true
 		}
 	}
 }
