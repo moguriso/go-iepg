@@ -2,7 +2,7 @@ BUILD		:= release
 HASH=$(shell git rev-parse --short HEAD)
 BUILDDATE=$(shell date '+%Y/%m/%d %H:%M:%S %Z')
 GOVERSION=$(shell go version)
-VERSION     := 1.0.0
+VERSION     := 1.0.1
 
 SRCS		:= $(shell find ./ -type f -name '*.go')
 LDFLAGS		:= -ldflags="-s -w -X \"main.version=$(VERSION)\" -X \"main.hash=$(HASH)\" -X \"main.builddate=$(BUILDDATE)\" -X \"main.goversion=$(GOVERSION)\" -extldflags "
