@@ -110,16 +110,38 @@ func confirmStation(src, dst string) bool {
 	return false
 }
 
+func convertWeekDayJa2En(src string) string {
+	switch src {
+	case "月":
+		return "Mon"
+	case "火":
+		return "Tue"
+	case "水":
+		return "Web"
+	case "木":
+		return "Thu"
+	case "金":
+		return "Fri"
+	case "土":
+		return "Sat"
+	case "日":
+		return "Sun"
+	}
+	return src
+}
+
 func confirmWeekDay(src, dst string) bool {
 	log.L.Println("src =", src)
 	log.L.Println("dst =", dst)
-	tmp := strings.ReplaceAll(src, "（", "")
-	tmp = strings.ReplaceAll(tmp, "）", "")
-	log.L.Println("tmp =", tmp)
 	if dst == "" {
 		return true
 	}
-	if strings.Contains(dst, tmp) {
+	conv_dst := convertWeekDayJa2En(dst)
+	log.L.Println("conved_dst =", conv_dst)
+	tmp := strings.ReplaceAll(src, "（", "")
+	tmp = strings.ReplaceAll(tmp, "）", "")
+	log.L.Println("tmp =", tmp)
+	if strings.Contains(conv_dst, tmp) {
 		return true
 	}
 	return false
