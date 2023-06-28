@@ -117,7 +117,7 @@ func convertWeekDayJa2En(src string) string {
 	case "火":
 		return "Tue"
 	case "水":
-		return "Web"
+		return "Wed"
 	case "木":
 		return "Thu"
 	case "金":
